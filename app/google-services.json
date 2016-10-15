@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "95672419509",
+    "firebase_url": "https://compass-7386c.firebaseio.com",
+    "project_id": "compass-7386c",
+    "storage_bucket": "compass-7386c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95672419509:android:73d77895e6687e4a",
+        "android_client_info": {
+          "package_name": "com.example.amr.compass_17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95672419509-4c56svmjls7u433b7umtp8nhphe9cn8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbYyyfDRdu4sqge-175So6LRwMr1_oSCk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

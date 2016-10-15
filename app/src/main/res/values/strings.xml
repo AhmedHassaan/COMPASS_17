@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">COMPASS_17</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_forgetPassword">Forget Your Password?</string>
+    <string name="btn_go_signup">Not a member? Sign Up now!</string>
+    <string name="btn_email_hint">Email</string>
+    <string name="btn_password_hint">Password</string>
 </resources>
