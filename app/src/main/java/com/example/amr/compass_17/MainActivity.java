@@ -1,5 +1,6 @@
 package com.example.amr.compass_17;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         String[] tabsName = {"Home","About Us","Sessions"};
         Drawable[] tabIcons = {
-                getResources().getDrawable(R.drawable.ic_launcher)
-                ,getResources().getDrawable(R.drawable.ic_launcher)
-                ,getResources().getDrawable(R.drawable.ic_launcher)
+                getResources().getDrawable(R.drawable.compass)
+                ,getResources().getDrawable(R.drawable.compass)
+                ,getResources().getDrawable(R.drawable.compass)
         };
         mPager.setAdapter(new MyFragmentPageAdapter(getSupportFragmentManager(),fragmentList,tabsName,tabIcons));
         mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
@@ -52,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
+        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
     }
 
 }

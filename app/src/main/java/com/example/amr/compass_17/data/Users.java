@@ -26,11 +26,5 @@ public class Users {
     public boolean getLogin(){
         return get.getBoolean("login",false);
     }
-    public void setOut(boolean b){
-        set.putBoolean("out",b);
-        set.apply();
-    }
-    public boolean getOut(){
-        return get.getBoolean("out",false);
-    }
+
 }

@@ -1,14 +1,15 @@
 package com.example.amr.compass_17;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.amr.compass_17.data.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,12 +21,13 @@ public class LogInActivity extends AppCompatActivity {
     private Button logIn,forgetPassword,signUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    Users data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-
+        data = new Users(getApplicationContext());
         emailEditText = (EditText)findViewById(R.id.Email_logIn_EditText);
         passwordEditText = (EditText)findViewById(R.id.Password_logIn_EditText);
         logIn = (Button)findViewById(R.id.logIn_btn);
@@ -43,7 +45,7 @@ public class LogInActivity extends AppCompatActivity {
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailEditText.getText().toString();
+                final String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
                 if (email.isEmpty()) {
@@ -73,6 +75,7 @@ public class LogInActivity extends AppCompatActivity {
                         }
                         else
                         {
+                            data.setLogin(email);
                             Toast.makeText(LogInActivity.this, "Welcome", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LogInActivity.this,MainActivity.class));
                             finish();
@@ -102,5 +105,14 @@ public class LogInActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(LogInActivity.this, SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
     }
 }
