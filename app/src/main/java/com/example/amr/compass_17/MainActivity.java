@@ -50,5 +50,10 @@ public class MainActivity extends AppCompatActivity {
         mTabs.setViewPager(mPager);
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 }
 
