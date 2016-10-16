@@ -20,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         data = new Users (getApplicationContext());
         if( getIntent().getBooleanExtra("Exit me", false)){
             finish();
+            System.exit(0);
             return; // add this to prevent from doing unnecessary stuffs
         }
         progressBar = (ProgressBar) findViewById(R.id.bb);
