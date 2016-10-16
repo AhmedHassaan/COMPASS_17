@@ -1,20 +1,28 @@
 package com.example.amr.compass_17;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ProgressBar;
 
+import com.example.amr.compass_17.data.Users;
+
 public class SplashActivity extends AppCompatActivity {
-    protected static final int TIMER_RUNTIME = 10000;
+    protected static final int TIMER_RUNTIME = 5000;
     protected boolean mbActive;
     protected ProgressBar progressBar;
+    Users data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        data = new Users (getApplicationContext());
+        if( getIntent().getBooleanExtra("Exit me", false)){
+            finish();
+            System.exit(0);
+            return; // add this to prevent from doing unnecessary stuffs
+        }
         progressBar = (ProgressBar) findViewById(R.id.bb);
 
         final Thread timerThread = new Thread(new Runnable() {
@@ -25,10 +33,10 @@ public class SplashActivity extends AppCompatActivity {
                     int waited=0;
                     while (mbActive && (waited<TIMER_RUNTIME))
                     {
-                        Thread.sleep(200);
+                        Thread.sleep(100);
                         if (mbActive)
                         {
-                            waited +=200;
+                            waited +=100;
                             updatePro(waited);
                         }
                     }
@@ -36,7 +44,12 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }finally {
                     oncontinue();
-                    Intent intent = new Intent(SplashActivity.this , LogInActivity.class);
+                    Intent intent;
+                    if(data.getLogin())
+                        intent = new Intent(SplashActivity.this , MainActivity.class);
+                    else
+                        intent = new Intent(SplashActivity.this , LogInActivity.class);
+
                     startActivity(intent);
                 }
             }

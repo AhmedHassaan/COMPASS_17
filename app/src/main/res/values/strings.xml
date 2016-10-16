@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">COMPASS_17</string>
+    <string name="app_name">COMPASS 17</string>
     <string name="btn_login">LOGIN</string>
     <string name="btn_signUp">Sign Up</string>
     <string name="btn_reset">Reset</string>
