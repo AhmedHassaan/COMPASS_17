@@ -16,10 +16,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LogInActivity extends AppCompatActivity {
 
-    EditText emailEditText,passwordEditText;
-    Button logIn,forgetPassword,signUp;
-    ProgressBar progressBar;
-    FirebaseAuth auth;
+    private EditText emailEditText,passwordEditText;
+    private Button logIn,forgetPassword,signUp;
+    private ProgressBar progressBar;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +44,20 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString();
-                final String password = passwordEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
 
                 if (email.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please, Enter email address!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (password.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please, Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(passwordEditText.length() < 6)
+                {
+                    Toast.makeText(LogInActivity.this, "Password too short. Please, Enter minimum 6 characters!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -64,14 +69,7 @@ public class LogInActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         if(!task.isSuccessful())
                         {
-                            if(passwordEditText.length() < 6)
-                            {
-                                Toast.makeText(LogInActivity.this, "Password is less than 6 chars", Toast.LENGTH_LONG).show();
-                            }
-                            else
-                            {
-                                Toast.makeText(LogInActivity.this, "Login Failed ", Toast.LENGTH_LONG).show();
-                            }
+                            Toast.makeText(LogInActivity.this, "Login Failed ", Toast.LENGTH_LONG).show();
                         }
                         else
                         {
@@ -87,7 +85,8 @@ public class LogInActivity extends AppCompatActivity {
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //launch forget password
+                startActivity(new Intent(LogInActivity.this,ForgotPasswordActivity.class));
+                finish();
             }
         });
 
@@ -99,7 +98,8 @@ public class LogInActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //launch signUp activity
+                startActivity(new Intent(LogInActivity.this,SignUpActivity.class));
+                finish();
             }
         });
     }
