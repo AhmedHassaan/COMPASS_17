@@ -26,12 +26,13 @@ public class LogInActivity extends AppCompatActivity {
     private EditText forgot_emailEditText;
     private  Button resetPassword;
     private EditText login_emailEditText,login_passwordEditText;
-    private Button logIn,forgetPassword,signUp;
+    private Button logIn,forgetPassword,signUp_layout;
     private ProgressBar progressBar_login,progressBar_forgot,progressBar_signup;
     private FirebaseAuth auth;
     Users data;
     RelativeLayout Layout_login,Layout_signup,Layout_forgot;
     Button signup_login,forgot_login;
+    Button signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,8 @@ public class LogInActivity extends AppCompatActivity {
         resetPassword = (Button)findViewById(R.id.reset_btn);
         logIn = (Button)findViewById(R.id.logIn_btn);
         forgetPassword = (Button)findViewById(R.id.forget_password_btn);
-        signUp = (Button)findViewById(R.id.signUp_activity_launcher);
+        signUp_layout = (Button)findViewById(R.id.signUp_activity_launcher);
+        signUp = (Button)findViewById(R.id.SignUP_btn);
 
         //Text-----------
 
@@ -264,7 +266,7 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
-        signUp.setOnClickListener(new View.OnClickListener() {
+        signUp_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Layout_signup.animate().yBy(-2000).setDuration(700).start();
