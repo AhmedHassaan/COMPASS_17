@@ -96,6 +96,17 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/mainThemeColor2"
+                    android:textColor="@color/white"
+                    android:text="@string/btn_guest"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/logIn_btn"
+                    android:id="@+id/guest"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:textAllCaps="false"
                     android:layout_below="@+id/forget_password_btn"
                     android:layout_marginTop="20dp"
@@ -113,7 +124,7 @@
                     android:id="@+id/forget_password_btn"
                     android:textAllCaps="false"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@+id/logIn_btn"/>
+                    android:layout_below="@+id/guest"/>
 
                 <ProgressBar
                     android:layout_width="wrap_content"

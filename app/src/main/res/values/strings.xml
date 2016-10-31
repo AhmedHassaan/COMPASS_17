@@ -8,7 +8,7 @@
     <string name="btn_email_hint">Email</string>
     <string name="btn_password_hint">Password</string>
     <string name="btn_confirmPassword_hint">Confirm Password</string>
-
+    <string name="btn_guest">Sign in as a guest</string>
     <string name="backToLogin">Back To Login</string>
     <string name="forgot_password_text">Forgot Password?</string>
     <string name="forgot_password_msg">We will send password reset instructions to your registered Email.</string>

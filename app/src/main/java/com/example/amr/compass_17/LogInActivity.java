@@ -32,7 +32,7 @@ public class LogInActivity extends AppCompatActivity {
     Users data;
     RelativeLayout Layout_login,Layout_signup,Layout_forgot;
     Button signup_login,forgot_login;
-    Button signUp;
+    Button signUp,guest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class LogInActivity extends AppCompatActivity {
         forgetPassword = (Button)findViewById(R.id.forget_password_btn);
         signUp_layout = (Button)findViewById(R.id.signUp_activity_launcher);
         signUp = (Button)findViewById(R.id.SignUP_btn);
+        guest = (Button)findViewById(R.id.guest);
 
         //Text-----------
 
@@ -94,6 +95,22 @@ public class LogInActivity extends AppCompatActivity {
         {
             Toast.makeText(this,"Login is unable now, we are very sorry",Toast.LENGTH_LONG).show();
         }
+
+
+        //guest button -----------------------------
+
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data.setGuest(true);
+                data.setLogin("");
+                Toast.makeText(LogInActivity.this, "Welcome", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(LogInActivity.this,MainActivity.class));
+                finish();
+
+            }
+        });
+
 
 
         //login Button ----------------------------

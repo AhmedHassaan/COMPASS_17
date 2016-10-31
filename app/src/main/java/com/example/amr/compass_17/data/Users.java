@@ -27,4 +27,13 @@ public class Users {
         return get.getBoolean("login",false);
     }
 
+    public void setGuest(boolean b){
+        set.putBoolean("guest",b);
+        set.apply();
+    }
+
+    public boolean getGuest(){
+        return get.getBoolean("guest",false);
+    }
+
 }
