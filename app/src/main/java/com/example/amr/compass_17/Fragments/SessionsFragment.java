@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.amr.compass_17.LstViewAdapter;
+import com.example.amr.compass_17.Adapters.LstViewAdapter;
 import com.example.amr.compass_17.R;
 
 /**

@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.amr.compass_17.Fragments.AboutUsFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
-import com.example.amr.compass_17.Fragments.MyFragmentPageAdapter;
+import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
 import com.example.amr.compass_17.SlideTabs.SlidingTabLayout;
 

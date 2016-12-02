@@ -1,4 +1,4 @@
-package com.example.amr.compass_17;
+package com.example.amr.compass_17.Adapters;
 
 /**
  * Created by Lenovo on 10/26/2016.
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.amr.compass_17.R;
 
 import java.util.ArrayList;
 public class LstViewAdapter extends ArrayAdapter<String> {

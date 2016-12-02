@@ -13,6 +13,8 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.amr.compass_17.data.ControlRealm;
+import com.example.amr.compass_17.data.OneMessage;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -21,7 +23,8 @@ import com.google.firebase.messaging.RemoteMessage;
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
-
+    ControlRealm controlRealm;
+    OneMessage oneMessage;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
@@ -41,7 +44,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void sendNotification(String body) {
-
+        controlRealm = new ControlRealm(this);
+        oneMessage = new OneMessage(body);
+        controlRealm.putMessage(oneMessage);
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

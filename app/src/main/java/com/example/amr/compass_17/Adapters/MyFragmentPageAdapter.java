@@ -1,4 +1,4 @@
-package com.example.amr.compass_17.Fragments;
+package com.example.amr.compass_17.Adapters;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
