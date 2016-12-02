@@ -1,19 +1,21 @@
 package com.example.amr.compass_17;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.AboutUsFragment;
 import com.example.amr.compass_17.Fragments.ComminucationFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
-import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
-import com.example.amr.compass_17.SlideTabs.SlidingTabLayout;
+import com.example.amr.compass_17.data.ControlRealm;
+import com.example.amr.compass_17.data.OneMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager mPager;
     ImageView homeIcon,aboutusIcon,workshopIcon;
-
+    ControlRealm controlRealm;
+    OneMessage oneMessage;
     final int HOMEICON_POSTION = 0;
     final int WORKSHOPICON_POSTION = 1;
     final int ABOUTUS_POSTION = 2;
@@ -35,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Intent intent = getIntent();
+        String s;
+        if(intent!=null){
+            s = intent.getStringExtra("body");
+//            controlRealm = new ControlRealm(this);
+//            oneMessage = new OneMessage(s);
+//            controlRealm.putMessage(oneMessage);
+            Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+        }
         setViewPager();
     }
 
@@ -134,10 +145,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        intent.putExtra("EXIT", true);
-//        startActivity(intent);
         System.exit(0);
 
 

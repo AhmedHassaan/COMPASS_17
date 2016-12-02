@@ -25,6 +25,7 @@ public class ComminucationFragment extends Fragment{
     ArrayList<String> messages = new ArrayList<>();
     ArrayList<OneMessage> allMessages = new ArrayList<>();
     ControlRealm controlRealm;
+    boolean first  = false;
 
     @Nullable
     @Override
@@ -33,11 +34,12 @@ public class ComminucationFragment extends Fragment{
         controlRealm = new ControlRealm(getActivity());
         listView = (ListView)root.findViewById(R.id.listview);
         allMessages = controlRealm.getAllMessages();
+        messages.add("Test test");
         for(int i=0;i<allMessages.size();i++)
             messages.add(allMessages.get(i).getBody());
         adapter = new messageAdapter(getActivity(),R.layout.onemessage,messages);
         listView.setAdapter(adapter);
-
+        first = true;
         return root;
     }
 }

@@ -13,8 +13,6 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.example.amr.compass_17.data.ControlRealm;
-import com.example.amr.compass_17.data.OneMessage;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -23,16 +21,16 @@ import com.google.firebase.messaging.RemoteMessage;
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
-    ControlRealm controlRealm;
-    OneMessage oneMessage;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
         Log.d(TAG, "FROM:" + remoteMessage.getFrom());
+        Log.d(TAG, "FROM11:" + remoteMessage.getData());
+
 
         //Check if the message contains data
         if(remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Message data: " + remoteMessage.getData());
+            Log.v(TAG, "Message data: " + remoteMessage.getData());
         }
 
         //Check if the message contains notification
@@ -44,10 +42,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void sendNotification(String body) {
-        controlRealm = new ControlRealm(this);
-        oneMessage = new OneMessage(body);
-        controlRealm.putMessage(oneMessage);
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("body",body);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0/*Request code*/, intent, PendingIntent.FLAG_ONE_SHOT);
