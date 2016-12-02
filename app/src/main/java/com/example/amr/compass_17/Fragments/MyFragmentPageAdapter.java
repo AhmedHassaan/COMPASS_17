@@ -16,14 +16,10 @@ import java.util.List;
 public class MyFragmentPageAdapter extends FragmentPagerAdapter {
 
     List<Fragment> fragmentList;
-    String[] tabsName;
-    Drawable[] tabIcons;
 
-    public MyFragmentPageAdapter(FragmentManager fm,List<Fragment> fragmentList,String[] tabsName,Drawable[] tabIcons) {
+    public MyFragmentPageAdapter(FragmentManager fm,List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
-        this.tabsName = tabsName;
-        this.tabIcons = tabIcons;
     }
 
     @Override
@@ -35,19 +31,4 @@ public class MyFragmentPageAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentList.size();
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-
-        Drawable d = tabIcons[position];
-        d.setBounds(0,0,100,100);
-
-        ImageSpan imageSpan = new ImageSpan(d);
-        SpannableString spannableString = new SpannableString(tabsName[position]);
-        spannableString.setSpan(imageSpan,0,spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        return spannableString;
-        //return tabsName[position];
-    }
-
 }
