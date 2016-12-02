@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.amr.compass_17.Fragments.AboutUsFragment;
+import com.example.amr.compass_17.Fragments.ComminucationFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
 import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
@@ -26,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     final int WORKSHOPICON_POSTION = 1;
     final int ABOUTUS_POSTION = 2;
 
-    int[] selectedImages = {R.drawable.home_selected,R.drawable.workshop_selected,R.drawable.aboutus_selected};
-    int[] unSelectedImages = {R.drawable.home_unselected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected};
-    int[] images = {R.drawable.home_selected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected};
+    int[] selectedImages = {R.drawable.home_selected,R.drawable.workshop_selected,R.drawable.aboutus_selected,R.drawable.home_selected};
+    int[] unSelectedImages = {R.drawable.home_unselected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected,R.drawable.home_unselected};
+    int[] images = {R.drawable.home_selected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected,R.drawable.home_unselected};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new HomeFragment());
         fragmentList.add(new SessionsFragment());
         fragmentList.add(new AboutUsFragment());
+        fragmentList.add(new ComminucationFragment());
 
 
         mPager = (ViewPager) findViewById(R.id.pager);
