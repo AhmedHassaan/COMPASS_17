@@ -39,17 +39,22 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         //Check if the message contains notification
 
-        if(remoteMessage.getNotification() != null) {
+//        if(remoteMessage.getNotification() != null) {
+//
+//            Log.d(TAG, "Mesage body:" + remoteMessage.getNotification().getBody());
+//            sendNotification(remoteMessage.getNotification().getBody());
+//
+//        }
 
-            Log.d(TAG, "Mesage body:" + remoteMessage.getNotification().getBody());
-            sendNotification(remoteMessage.getNotification().getBody());
 
-        }
+        Log.d(TAG, "Mesage body:" + remoteMessage.getNotification().getBody());
+        sendNotification(remoteMessage.getNotification().getBody());
+
     }
 
     private void sendNotification(String body) {
         Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("body",body);
+        intent.putExtra("body",body);
         controlRealm = new ControlRealm(this);
         oneMessage = new OneMessage(body);
         controlRealm.putMessage(oneMessage);
