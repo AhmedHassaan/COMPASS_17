@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     final int HOMEICON_POSTION = 0;
     final int WORKSHOPICON_POSTION = 1;
     final int ABOUTUS_POSTION = 2;
+    final int COMM_POSITION = 3;
     ViewPager mPager;
-    ImageView homeIcon, aboutusIcon, workshopIcon;
+    ImageView homeIcon, aboutusIcon, workshopIcon,commIcon;
     ControlRealm controlRealm;
     OneMessage oneMessage;
     int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected, R.drawable.home_selected};
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         homeIcon = (ImageView) findViewById(R.id.home_icon);
         workshopIcon = (ImageView) findViewById(R.id.workshop_icon);
         aboutusIcon = (ImageView) findViewById(R.id.aboutus_icon);
-
+        commIcon = (ImageView) findViewById(R.id.comm_icon);
         setImages();
 
         imagesOnClickListener();
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         homeIcon.setImageResource(images[HOMEICON_POSTION]);
         workshopIcon.setImageResource(images[WORKSHOPICON_POSTION]);
         aboutusIcon.setImageResource(images[ABOUTUS_POSTION]);
+        commIcon.setImageResource(images[COMM_POSITION]);
     }
 
     void imagesOnClickListener() {
@@ -126,6 +128,16 @@ public class MainActivity extends AppCompatActivity {
                 setSelectedImage(ABOUTUS_POSTION);
                 setImages();
                 mPager.setCurrentItem(ABOUTUS_POSTION);
+            }
+        });
+
+        commIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUnSelectedImages();
+                setSelectedImage(COMM_POSITION);
+                setImages();
+                mPager.setCurrentItem(COMM_POSITION);
             }
         });
     }
