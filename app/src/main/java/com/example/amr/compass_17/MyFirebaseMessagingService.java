@@ -13,6 +13,8 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.amr.compass_17.data.ControlRealm;
+import com.example.amr.compass_17.data.OneMessage;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -21,11 +23,13 @@ import com.google.firebase.messaging.RemoteMessage;
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
+
+    ControlRealm controlRealm;
+    OneMessage oneMessage;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
         Log.d(TAG, "FROM:" + remoteMessage.getFrom());
-        Log.d(TAG, "FROM11:" + remoteMessage.getData());
 
 
         //Check if the message contains data
@@ -36,14 +40,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         //Check if the message contains notification
 
         if(remoteMessage.getNotification() != null) {
+
             Log.d(TAG, "Mesage body:" + remoteMessage.getNotification().getBody());
             sendNotification(remoteMessage.getNotification().getBody());
+
         }
     }
 
     private void sendNotification(String body) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("body",body);
+//        intent.putExtra("body",body);
+        controlRealm = new ControlRealm(this);
+        oneMessage = new OneMessage(body);
+        controlRealm.putMessage(oneMessage);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0/*Request code*/, intent, PendingIntent.FLAG_ONE_SHOT);
@@ -52,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notifiBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Firebase Cloud Messaging")
+                .setContentTitle("Compass")
                 .setContentText(body)
                 .setAutoCancel(true)
                 .setSound(notificationSound)

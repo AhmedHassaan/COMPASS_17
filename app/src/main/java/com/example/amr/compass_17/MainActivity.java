@@ -22,36 +22,28 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager mPager;
-    ImageView homeIcon,aboutusIcon,workshopIcon;
-    ControlRealm controlRealm;
-    OneMessage oneMessage;
     final int HOMEICON_POSTION = 0;
     final int WORKSHOPICON_POSTION = 1;
     final int ABOUTUS_POSTION = 2;
-
-    int[] selectedImages = {R.drawable.home_selected,R.drawable.workshop_selected,R.drawable.aboutus_selected,R.drawable.home_selected};
-    int[] unSelectedImages = {R.drawable.home_unselected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected,R.drawable.home_unselected};
-    int[] images = {R.drawable.home_selected,R.drawable.workshop_unselected,R.drawable.aboutus_unselected,R.drawable.home_unselected};
+    ViewPager mPager;
+    ImageView homeIcon, aboutusIcon, workshopIcon;
+    ControlRealm controlRealm;
+    OneMessage oneMessage;
+    int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected, R.drawable.home_selected};
+    int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
+    int[] images = {R.drawable.home_selected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        String s;
-        if(intent!=null){
-            s = intent.getStringExtra("body");
-//            controlRealm = new ControlRealm(this);
-//            oneMessage = new OneMessage(s);
-//            controlRealm.putMessage(oneMessage);
-            Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
-        }
+        String s= intent.getStringExtra("body");
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         setViewPager();
     }
 
-    void setViewPager()
-    {
+    void setViewPager() {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
         fragmentList.add(new SessionsFragment());
@@ -60,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         mPager = (ViewPager) findViewById(R.id.pager);
-        homeIcon =(ImageView)findViewById(R.id.home_icon);
-        workshopIcon =(ImageView)findViewById(R.id.workshop_icon);
-        aboutusIcon =(ImageView)findViewById(R.id.aboutus_icon);
+        homeIcon = (ImageView) findViewById(R.id.home_icon);
+        workshopIcon = (ImageView) findViewById(R.id.workshop_icon);
+        aboutusIcon = (ImageView) findViewById(R.id.aboutus_icon);
 
         setImages();
 
@@ -90,28 +82,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void setUnSelectedImages()
-    {
-        for(int i = 0;i< unSelectedImages.length;i++)
-        {
+    void setUnSelectedImages() {
+        for (int i = 0; i < unSelectedImages.length; i++) {
             images[i] = unSelectedImages[i];
         }
     }
 
-    void setSelectedImage(int postion)
-    {
+    void setSelectedImage(int postion) {
         images[postion] = selectedImages[postion];
     }
 
-    void setImages()
-    {
+    void setImages() {
         homeIcon.setImageResource(images[HOMEICON_POSTION]);
         workshopIcon.setImageResource(images[WORKSHOPICON_POSTION]);
         aboutusIcon.setImageResource(images[ABOUTUS_POSTION]);
     }
 
-    void imagesOnClickListener()
-    {
+    void imagesOnClickListener() {
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

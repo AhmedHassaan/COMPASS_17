@@ -34,6 +34,7 @@ public class ComminucationFragment extends Fragment{
         controlRealm = new ControlRealm(getActivity());
         listView = (ListView)root.findViewById(R.id.listview);
         allMessages = controlRealm.getAllMessages();
+        messages = new ArrayList<>();
         messages.add("Test test");
         for(int i=0;i<allMessages.size();i++)
             messages.add(allMessages.get(i).getBody());
