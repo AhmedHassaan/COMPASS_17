@@ -10,15 +10,15 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
  */
 
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
-
-    private static final String TAG = "MyFirebaseInsIDService";
+    private static final String REG_TOKEN = "REG_TOKEN";
 
     @Override
     public void onTokenRefresh() {
         //Get updated token
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.v(TAG, "New Token: " + refreshedToken);
+        String recent_Token = FirebaseInstanceId.getInstance().getToken();
+        Log.d(REG_TOKEN,recent_Token);
 
         //You can save the token into third party server to do anything you want
     }
+
 }

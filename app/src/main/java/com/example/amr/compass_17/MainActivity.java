@@ -38,10 +38,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = getIntent();
-        String s= intent.getStringExtra("body");
-        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+        if(getIntent().getExtras()!=null) {
+            Bundle b = getIntent().getExtras();
+            String s = b.getString("p");
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+        }
         setViewPager();
+
+        startService(new Intent(this, NotificationServices.class));
     }
 
     void setViewPager() {
