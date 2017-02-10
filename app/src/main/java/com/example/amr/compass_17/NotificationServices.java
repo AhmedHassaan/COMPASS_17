@@ -6,7 +6,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
+import android.support.v7.app.NotificationCompat;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -42,15 +42,14 @@ public class NotificationServices extends Service {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                /*NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
+                NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
                 notification.setContentIntent(pendingIntent)
                         .setAutoCancel(true)
                         .setSmallIcon(R.drawable.compass)
                         .setContentTitle("Legos")
                         .setContentText(dataSnapshot.getValue(String.class))
                         .setOnlyAlertOnce(true);
-                notificationManager.notify(0,notification.build());*/
-                Log.d("BG","working");
+                notificationManager.notify(0,notification.build());
             }
 
             @Override

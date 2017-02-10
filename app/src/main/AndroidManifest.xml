@@ -29,6 +29,11 @@
         </service>
         <activity android:name=".MainActivity" />
         <activity android:name=".LogInActivity"/>
+
+        <service
+            android:name=".NotificationServices"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

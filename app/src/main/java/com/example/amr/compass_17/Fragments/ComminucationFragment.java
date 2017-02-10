@@ -1,5 +1,6 @@
 package com.example.amr.compass_17.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.amr.compass_17.Adapters.messageAdapter;
+import com.example.amr.compass_17.NotificationServices;
 import com.example.amr.compass_17.R;
 import com.example.amr.compass_17.data.ControlRealm;
 import com.example.amr.compass_17.data.OneMessage;
@@ -43,6 +45,7 @@ public class ComminucationFragment extends Fragment{
         adapter = new messageAdapter(getActivity(),R.layout.onemessage,messages);
         listView.setAdapter(adapter);
 
+        getActivity().startService(new Intent(getActivity(),NotificationServices.class));
 
         DatabaseReference db1 = db.child("Message").child("legos");
         db1.addChildEventListener(new ChildEventListener() {

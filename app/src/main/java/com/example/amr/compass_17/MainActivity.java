@@ -1,6 +1,5 @@
 package com.example.amr.compass_17;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         }
         setViewPager();
 
-        startService(new Intent(this, NotificationServices.class));
+//        startService(new Intent(this, NotificationServices.class));
     }
 
     void setViewPager() {
