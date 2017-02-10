@@ -2,10 +2,114 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ListView
-        android:id="@+id/listview"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    tools:context="com.example.amr.compass_17.Fragments.SessionsFragment"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:paddingBottom="10dp"
+        android:background="@color/workshop_background">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/button" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/selectedImage"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ahmeeed"
+            android:textSize="29sp"
+            android:id="@+id/selectedText"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/selectedImage"
+            android:layout_toEndOf="@+id/selectedImage" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/dnet"
+            android:id="@+id/dnet"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/cliche"
+            android:layout_weight="1"
+            android:id="@+id/cliche" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/laypuzz"
+            android:id="@+id/laypuz"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:layout_weight="2.5">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/legoss"
+            android:id="@+id/legoss"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/pharopell"
+            android:layout_weight="1"
+            android:id="@+id/pharopell" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/sugarrush"
+            android:id="@+id/sugarrush"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
 </LinearLayout>
