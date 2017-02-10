@@ -13,8 +13,6 @@ import com.example.amr.compass_17.Fragments.AboutUsFragment;
 import com.example.amr.compass_17.Fragments.ComminucationFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
-import com.example.amr.compass_17.data.ControlRealm;
-import com.example.amr.compass_17.data.OneMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     final int COMM_POSITION = 3;
     ViewPager mPager;
     ImageView homeIcon, aboutusIcon, workshopIcon,commIcon;
-    ControlRealm controlRealm;
-    OneMessage oneMessage;
     int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected, R.drawable.home_selected};
     int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
     int[] images = {R.drawable.home_selected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
@@ -43,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         }
         setViewPager();
-
-//        startService(new Intent(this, NotificationServices.class));
     }
 
     void setViewPager() {
@@ -148,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         System.exit(0);
-
-
     }
 
 }
