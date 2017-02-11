@@ -36,4 +36,13 @@ public class Users {
         return get.getBoolean("guest",false);
     }
 
+    public void setLastMessage(String s){
+        set.putString("last",s);
+        set.commit();
+    }
+
+    public String getLastMessage(){
+        return get.getString("last",de);
+    }
+
 }
