@@ -47,6 +47,7 @@ public class NotificationServices extends Service {
                 Log.i("BG",lastMess);
                 if(lastMess.equals(msg)){
                     Log.i("BG","If condition");
+
                 }
                 else {
                     Log.i("BG","else condition");
