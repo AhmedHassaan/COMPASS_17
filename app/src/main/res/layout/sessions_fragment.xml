@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="3.5"
         android:background="@color/workshop_background"
         android:padding="5dp">
 
@@ -22,21 +22,24 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/workshop_margin"
             android:layout_toEndOf="@+id/selectedImage"
             android:layout_toRightOf="@+id/selectedImage"
             android:text="Ahmeeed"
             android:textSize="@dimen/workshop_text_size" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/location_icon_width"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_margin="5dp"
-            android:text="Location"
+            android:layout_margin="@dimen/location_icon_margin"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/maps_icon"
             android:textSize="15sp" />
 
         <ImageButton
@@ -58,7 +61,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/workshop_margin"
         android:layout_marginRight="@dimen/workshop_margin"
-        android:layout_weight="6"
+        android:layout_weight="6.5"
         android:gravity="center"
         android:orientation="vertical">
 
