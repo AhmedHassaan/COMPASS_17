@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tablet Mode -->
+    <dimen name="workshop_logo_width">250dp</dimen>
+    <dimen name="workshop_text_size">45sp</dimen>
+    <dimen name="workshop_margin">48dp</dimen>
+</resources>

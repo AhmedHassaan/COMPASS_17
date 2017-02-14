@@ -40,29 +40,28 @@ public class SessionsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.sessions_fragment,container,false);
-        ButterKnife.bind(this , view);
+        View view = inflater.inflate(R.layout.sessions_fragment, container, false);
+        ButterKnife.bind(this, view);
 
-
-        cliche.setBackgroundResource(R.drawable.cliche);
-        dnet.setBackgroundResource(R.drawable.dnet);
-        sugarrush.setBackgroundResource(R.drawable.sugarrushs);
-        pharopell.setBackgroundResource(R.drawable.pharopell);
-        laypuzz.setBackgroundResource(R.drawable.laypuzz);
-        legoss.setBackgroundResource(R.drawable.legoss);
-        selectedImage.setBackgroundResource(R.drawable.sugarrush);
+        cliche.setImageResource(R.drawable.cliche);
+        dnet.setImageResource(R.drawable.dnet);
+        sugarrush.setImageResource(R.drawable.sugarrushs);
+        pharopell.setImageResource(R.drawable.pharopell);
+        laypuzz.setImageResource(R.drawable.laypuzz);
+        legoss.setImageResource(R.drawable.legoss);
+        selectedImage.setImageResource(R.drawable.sugarrush);
         selectedText.setText("Sugarrush Workshop");
 
         dnet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnets);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.dnet);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnets);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.dnet);
                 selectedText.setText("Dnet Workshop");
             }
         });
@@ -70,13 +69,13 @@ public class SessionsFragment extends Fragment {
         cliche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cliche.setBackgroundResource(R.drawable.cliches);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.cliche);
+                cliche.setImageResource(R.drawable.cliches);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.cliche);
                 selectedText.setText("Cliche Workshop");
             }
         });
@@ -84,52 +83,52 @@ public class SessionsFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzzs);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.laypuzz);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzzs);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.laypuzz);
                 selectedText.setText("Laypyzz Workshop");
             }
         });
         legoss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legosss);
-                selectedImage.setBackgroundResource(R.drawable.legoss);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legosss);
+                selectedImage.setImageResource(R.drawable.legoss);
                 selectedText.setText("Legoss Workshop");
             }
         });
         pharopell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopells);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.pharopell);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopells);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.pharopell);
                 selectedText.setText("Pharopell Workshop");
             }
         });
         sugarrush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrushs);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.sugarrush);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrushs);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.sugarrush);
                 selectedText.setText("Sugarrush Workshop");
             }
         });
@@ -141,63 +140,63 @@ public class SessionsFragment extends Fragment {
     public void onClick(View v){
         switch (v.getId()){
             case R.id.cliche:
-                cliche.setBackgroundResource(R.drawable.cliches);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.cliche);
+                cliche.setImageResource(R.drawable.cliches);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.cliche);
                 selectedText.setText("Cliche Workshop");
                 break;
             case R.id.sugarrush:
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrushs);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.sugarrush);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrushs);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.sugarrush);
                 selectedText.setText("Sugarrush Workshop");
                 break;
             case R.id.laypuz:
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzzs);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.laypuzz);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzzs);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.laypuzz);
                 selectedText.setText("Laypyzz Workshop");
                 break;
             case R.id.legoss:
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legosss);
-                selectedImage.setBackgroundResource(R.drawable.legoss);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legosss);
+                selectedImage.setImageResource(R.drawable.legoss);
                 selectedText.setText("Legoss Workshop");
                 break;
             case R.id.pharopell:
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnet);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopells);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.pharopell);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnet);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopells);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.pharopell);
                 selectedText.setText("Pharopell Workshop");
                 break;
             case R.id.dnet:
-                cliche.setBackgroundResource(R.drawable.cliche);
-                dnet.setBackgroundResource(R.drawable.dnets);
-                sugarrush.setBackgroundResource(R.drawable.sugarrush);
-                pharopell.setBackgroundResource(R.drawable.pharopell);
-                laypuzz.setBackgroundResource(R.drawable.laypuzz);
-                legoss.setBackgroundResource(R.drawable.legoss);
-                selectedImage.setBackgroundResource(R.drawable.dnet);
+                cliche.setImageResource(R.drawable.cliche);
+                dnet.setImageResource(R.drawable.dnets);
+                sugarrush.setImageResource(R.drawable.sugarrush);
+                pharopell.setImageResource(R.drawable.pharopell);
+                laypuzz.setImageResource(R.drawable.laypuzz);
+                legoss.setImageResource(R.drawable.legoss);
+                selectedImage.setImageResource(R.drawable.dnet);
                 selectedText.setText("Dnet Workshop");
                 break;
         }

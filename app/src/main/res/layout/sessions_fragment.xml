@@ -3,113 +3,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="10"
-    tools:context="com.example.amr.compass_17.Fragments.SessionsFragment"
-    android:orientation="vertical">
+    tools:context="com.example.amr.compass_17.Fragments.SessionsFragment">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.5"
-        android:paddingBottom="10dp"
-        android:background="@color/workshop_background">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/button" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/selectedImage"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+        android:layout_weight="4"
+        android:background="@color/workshop_background"
+        android:padding="5dp">
 
         <TextView
+            android:id="@+id/selectedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ahmeeed"
-            android:textSize="29sp"
-            android:id="@+id/selectedText"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/selectedImage"
             android:layout_toRightOf="@+id/selectedImage"
-            android:layout_toEndOf="@+id/selectedImage" />
+            android:text="Ahmeeed"
+            android:textSize="@dimen/workshop_text_size" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:text="Location"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/selectedImage"
+            android:layout_width="@dimen/workshop_logo_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cliche" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.5"
-        android:paddingBottom="25dp"
-        android:paddingTop="25dp"
-        android:paddingLeft="7dp"
-        android:paddingRight="7dp"
-        android:orientation="horizontal">
+        android:layout_marginLeft="@dimen/workshop_margin"
+        android:layout_marginRight="@dimen/workshop_margin"
+        android:layout_weight="6"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/dnet"
-            android:id="@+id/dnet"
-            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/workshop_margin"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/cliche"
-            android:layout_weight="1"
-            android:id="@+id/cliche" />
+            <ImageButton
+                android:id="@+id/dnet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dnet" />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/laypuzz"
-            android:id="@+id/laypuz"
-            android:layout_weight="1"/>
+            <ImageButton
+                android:id="@+id/cliche"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cliche" />
 
+            <ImageButton
+                android:id="@+id/laypuz"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/laypuzz" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/legoss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/legoss" />
+
+            <ImageButton
+                android:id="@+id/pharopell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pharopell" />
+
+            <ImageButton
+                android:id="@+id/sugarrush"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sugarrush" />
+
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingLeft="7dp"
-        android:paddingRight="7dp"
-        android:layout_weight="2.5">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/legoss"
-            android:id="@+id/legoss"
-            android:layout_weight="1"/>
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/pharopell"
-            android:layout_weight="1"
-            android:id="@+id/pharopell" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/sugarrush"
-            android:id="@+id/sugarrush"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-
 
 </LinearLayout>
