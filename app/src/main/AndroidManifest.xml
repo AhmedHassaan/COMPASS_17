@@ -42,6 +42,8 @@
             android:name=".NotificationServices"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name=".NewsDetailActivity"></activity>
     </application>
 
 </manifest>

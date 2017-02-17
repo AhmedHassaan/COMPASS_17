@@ -3,6 +3,8 @@ package com.example.amr.compass_17.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +23,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     NewsAdapter newsAdapter;
-    //RecyclerView recyclerView;
-    ExpandableListView expandableListView;
+    RecyclerView recyclerView;
     List<News> newsList = new ArrayList<>();
 
     public HomeFragment(){}
@@ -34,32 +35,20 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment,container,false);
-        //recyclerView = (RecyclerView)view.findViewById(R.id.homePage_recyclerView);
-        expandableListView = (ExpandableListView)view.findViewById(R.id.homePage_list);
+        recyclerView = (RecyclerView) view.findViewById(R.id.news_recyclerview);
 
-        News news = new News("Hi",R.drawable.ic_launcher,"hello");
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        news = new News("Welcome",R.drawable.ic_launcher
-                ,"ay kalam bas al mohem tasht3'l ya3ny w al article yb2a latef w rbna ya5lek l om al donya w mtnsash al fakka yastaa");
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
-        newsList.add(news);
+        newsList = new ArrayList<>();
+        newsList.add(new News("Antalya","http://res.cloudinary.com/dflpifew9/image/upload/v1486849057/antalya_hg4npr.jpg","This is a test article to see if it works correctly or not."));
+        newsList.add(new News("Turkey","http://res.cloudinary.com/dflpifew9/image/upload/v1486849105/turkey_lbr9iv.jpg","This is a test article to see if it works correctly or not."));
+        newsList.add(new News("Antalya","http://res.cloudinary.com/dflpifew9/image/upload/v1486849057/antalya_hg4npr.jpg","This is a test article to see if it works correctly or not."));
+        newsList.add(new News("Turkey","http://res.cloudinary.com/dflpifew9/image/upload/v1486849105/turkey_lbr9iv.jpg","This is a test article to see if it works correctly or not."));
+        newsAdapter = new NewsAdapter(getContext(),newsList);
 
-        newsAdapter = new NewsAdapter(newsList);
-        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        //recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(48));
-        //recyclerView.setAdapter(newsAdapter);
-        expandableListView.setAdapter(newsAdapter);
-        expandableListView.setGroupIndicator(null);
+
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(newsAdapter);
 
         return view;
     }
