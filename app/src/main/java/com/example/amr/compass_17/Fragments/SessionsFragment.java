@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.amr.compass_17.R;
+import com.example.amr.compass_17.data.Users;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,20 +38,74 @@ public class SessionsFragment extends Fragment {
     @Bind(R.id.selectedText)
     TextView selectedText;
 
+    Users data;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sessions_fragment, container, false);
         ButterKnife.bind(this, view);
-
-        cliche.setImageResource(R.drawable.cliche);
-        dnet.setImageResource(R.drawable.dnet);
-        sugarrush.setImageResource(R.drawable.sugarrushs);
-        pharopell.setImageResource(R.drawable.pharopell);
-        laypuzz.setImageResource(R.drawable.laypuzz);
-        legoss.setImageResource(R.drawable.legoss);
-        selectedImage.setImageResource(R.drawable.sugarrush);
-        selectedText.setText("Sugarrush Workshop");
+        data = new Users(getActivity());
+        if(data.getWorkshop().equals("sugerrush")) {
+            cliche.setImageResource(R.drawable.cliche);
+            dnet.setImageResource(R.drawable.dnet);
+            sugarrush.setImageResource(R.drawable.sugarrushs);
+            pharopell.setImageResource(R.drawable.pharopell);
+            laypuzz.setImageResource(R.drawable.laypuzz);
+            legoss.setImageResource(R.drawable.legoss);
+            selectedImage.setImageResource(R.drawable.sugarrush);
+            selectedText.setText("Sugarrush Workshop");
+        }
+        if(data.getWorkshop().equals("pharopell")) {
+            cliche.setImageResource(R.drawable.cliche);
+            dnet.setImageResource(R.drawable.dnet);
+            sugarrush.setImageResource(R.drawable.sugarrush);
+            pharopell.setImageResource(R.drawable.pharopells);
+            laypuzz.setImageResource(R.drawable.laypuzz);
+            legoss.setImageResource(R.drawable.legoss);
+            selectedImage.setImageResource(R.drawable.pharopell);
+            selectedText.setText("Pharopell Workshop");
+        }
+        if(data.getWorkshop().equals("legos")) {
+            cliche.setImageResource(R.drawable.cliche);
+            dnet.setImageResource(R.drawable.dnet);
+            sugarrush.setImageResource(R.drawable.sugarrush);
+            pharopell.setImageResource(R.drawable.pharopell);
+            laypuzz.setImageResource(R.drawable.laypuzz);
+            legoss.setImageResource(R.drawable.legosss);
+            selectedImage.setImageResource(R.drawable.legoss);
+            selectedText.setText("Legoss Workshop");
+        }
+        if(data.getWorkshop().equals("laypuzz")) {
+            cliche.setImageResource(R.drawable.cliche);
+            dnet.setImageResource(R.drawable.dnet);
+            sugarrush.setImageResource(R.drawable.sugarrush);
+            pharopell.setImageResource(R.drawable.pharopell);
+            laypuzz.setImageResource(R.drawable.laypuzzs);
+            legoss.setImageResource(R.drawable.legoss);
+            selectedImage.setImageResource(R.drawable.laypuzz);
+            selectedText.setText("Laypyzz Workshop");
+        }
+        if(data.getWorkshop().equals("cliche")) {
+            cliche.setImageResource(R.drawable.cliches);
+            dnet.setImageResource(R.drawable.dnet);
+            sugarrush.setImageResource(R.drawable.sugarrush);
+            pharopell.setImageResource(R.drawable.pharopell);
+            laypuzz.setImageResource(R.drawable.laypuzz);
+            legoss.setImageResource(R.drawable.legoss);
+            selectedImage.setImageResource(R.drawable.cliche);
+            selectedText.setText("Cliche Workshop");
+        }
+        if(data.getWorkshop().equals("dnet")) {
+            cliche.setImageResource(R.drawable.cliche);
+            dnet.setImageResource(R.drawable.dnets);
+            sugarrush.setImageResource(R.drawable.sugarrush);
+            pharopell.setImageResource(R.drawable.pharopell);
+            laypuzz.setImageResource(R.drawable.laypuzz);
+            legoss.setImageResource(R.drawable.legoss);
+            selectedImage.setImageResource(R.drawable.dnet);
+            selectedText.setText("Dnet Workshop");
+        }
 
         dnet.setOnClickListener(new View.OnClickListener() {
             @Override

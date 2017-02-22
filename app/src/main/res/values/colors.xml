@@ -7,4 +7,5 @@
     <color name="white">#ffffff</color>
     <color name="mainThemeColor2">#666666</color>
     <color name="workshop_background">#FFF8DC</color>
+    <color name="login_background">#FFFFE0</color>
 </resources>

@@ -19,7 +19,7 @@ public class Users {
     }
 
     public void setLogin(String s){
-        set.putString("email",s);
+        set.putString("workshop",s);
         set.putBoolean("login",true);
         set.apply();
     }
@@ -27,13 +27,13 @@ public class Users {
         return get.getBoolean("login",false);
     }
 
-    public void setGuest(boolean b){
-        set.putBoolean("guest",b);
+    public void setGuest(){
+        set.putBoolean("login",false);
         set.apply();
     }
 
-    public boolean getGuest(){
-        return get.getBoolean("guest",false);
+    public String getWorkshop(){
+        return get.getString("workshop",de);
     }
 
     public void setLastMessage(String s){
@@ -43,6 +43,15 @@ public class Users {
 
     public String getLastMessage(){
         return get.getString("last",de);
+    }
+
+    public void setFirstTime(){
+        set.putBoolean("first",false);
+        set.commit();
+    }
+
+    public boolean  getFirstTime(){
+        return get.getBoolean("first",true);
     }
 
 }

@@ -37,7 +37,8 @@ public class NotificationServices extends Service {
         Intent intent = new Intent(getBaseContext(),SplashActivity.class);
         final PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),1,intent,0);
         final NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
-        DatabaseReference db1 = db.child("Message").child("legos");
+        final String workshop = data.getWorkshop();
+        DatabaseReference db1 = db.child("Message").child(workshop);
         db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -56,7 +57,7 @@ public class NotificationServices extends Service {
                     notification.setContentIntent(pendingIntent)
                             .setAutoCancel(true)
                             .setSmallIcon(R.drawable.compass)
-                            .setContentTitle("Legos")
+                            .setContentTitle(workshop)
                             .setContentText(dataSnapshot.getValue(String.class))
                             .setOnlyAlertOnce(true);
                     notificationManager.notify(0, notification.build());

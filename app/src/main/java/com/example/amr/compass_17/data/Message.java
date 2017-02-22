@@ -4,16 +4,16 @@ package com.example.amr.compass_17.data;
  * Created by Lenovo on 12/2/2016.
  */
 
-public class OneMessage {
+public class Message {
     String body;
     String workshop;
 
-    public OneMessage(String body) {
+    public Message(String body) {
         this.body = body;
         workshop = "";
     }
 
-    public OneMessage(String body, String workshop) {
+    public Message(String body, String workshop) {
         this.body = body;
         this.workshop = workshop;
     }
