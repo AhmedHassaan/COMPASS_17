@@ -13,13 +13,6 @@ public class personRealm extends RealmObject {
 
     String workshop;
 
-    public personRealm(){}
-
-    public personRealm(String email, String workshop) {
-        this.email = email;
-        this.workshop = workshop;
-    }
-
     public String getEmail() {
         return email;
     }

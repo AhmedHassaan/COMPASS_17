@@ -13,48 +13,20 @@ import io.realm.RealmResults;
  */
 
 public class ControlRealm {
-    Realm MessageRealm,PersonRealm;
+    Realm Message,PersonRealm;
 
     public ControlRealm(Context context) {
-        MessageRealm = Realm.getInstance(new RealmConfiguration.Builder(context)
-                .name("Messages.Realm").build());
+        Message = Realm.getInstance(new RealmConfiguration.Builder(context)
+                .name("MessageRealm.Realm").build());
         PersonRealm = Realm.getInstance(new RealmConfiguration.Builder(context)
                 .name("personRealm.Realm").build());
     }
 
-    public void putMessage(final Message message){
-        MessageRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                Messages messages = realm.createObject(Messages.class);
-                messages.setBody(message.getBody());
-                messages.setWorkshop(message.getWorkshop());
-                messages.setId(getNextKey());
-            }
-        });
-    }
-
-    public ArrayList<Message> getAllMessages(){
-        ArrayList<Message> all = new ArrayList<>();
-        RealmResults<Messages> results = MessageRealm.where(Messages.class).findAll();
-        for (Messages mm:results){
-            Message m = new Message(mm.getBody(),mm.getWorkshop());
-            all.add(m);
-        }
-        return all;
-    }
-
-    private int getNextKey()
-    {
-        return MessageRealm.where(Messages.class).max("id").intValue() + 1;
-    }
-
     public boolean emailExist (String email){
-        ArrayList<person> sEmail = new ArrayList<>();
+        ArrayList<String> sEmail = new ArrayList<>();
         RealmResults<personRealm> results = PersonRealm.where(personRealm.class).equalTo("email",email).findAll();
         for(personRealm f : results){
-            person p = new person(f.getEmail(),f.getWorkshop());
-            sEmail.add(p);
+            sEmail.add(f.getEmail());
         }
         if(sEmail.size()>0)
             return true;
@@ -77,5 +49,6 @@ public class ControlRealm {
             }
         });
     }
+
 
 }

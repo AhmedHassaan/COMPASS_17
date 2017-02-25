@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v7.app.NotificationCompat;
-import android.util.Log;
 
+import com.example.amr.compass_17.data.ControlRealm;
 import com.example.amr.compass_17.data.Users;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class NotificationServices extends Service {
     Users data;
     DatabaseReference db;
+    ControlRealm realm;
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -33,9 +35,9 @@ public class NotificationServices extends Service {
     public void onCreate() {
         super.onCreate();
         data = new Users(getBaseContext());
-        db= FirebaseDatabase.getInstance().getReference();
-        Intent intent = new Intent(getBaseContext(),SplashActivity.class);
-        final PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),1,intent,0);
+        db = FirebaseDatabase.getInstance().getReference();
+        Intent intent = new Intent(getBaseContext(), SplashActivity.class);
+        final PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
         final NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
         final String workshop = data.getWorkshop();
         DatabaseReference db1 = db.child("Message").child(workshop);
@@ -44,14 +46,7 @@ public class NotificationServices extends Service {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 String lastMess = data.getLastMessage();
                 String msg = dataSnapshot.getValue(String.class);
-                Log.i("BG",msg);
-                Log.i("BG",lastMess);
-                if(lastMess.equals(msg)){
-                    Log.i("BG","If condition");
-
-                }
-                else {
-                    Log.i("BG","else condition");
+                if (!lastMess.equals(msg)) {
                     data.setLastMessage(msg);
                     NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
                     notification.setContentIntent(pendingIntent)

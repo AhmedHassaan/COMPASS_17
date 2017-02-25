@@ -7,6 +7,8 @@
     android:layout_weight="20"
     tools:context="com.example.amr.compass_17.MainActivity">
 
+    <include layout="@layout/tool_bar"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -26,8 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".5"
-        android:background="@color/colorPrimaryDark"
-        android:weightSum="4"
+        android:background="@android:color/white"
+        android:weightSum="3"
         android:gravity="center"
         android:orientation="horizontal"
         >
@@ -58,18 +60,6 @@
             android:id="@+id/aboutus_icon"
             android:scaleType="centerInside"
             />
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/home_unselected"
-            android:id="@+id/comm_icon"
-            android:scaleType="centerInside"
-            />
-
-
     </LinearLayout>
 
 </LinearLayout>

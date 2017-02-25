@@ -33,6 +33,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:label="Welcome"
             android:screenOrientation="portrait" />
         <activity
             android:name=".LogInActivity"
@@ -43,7 +44,13 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".NewsDetailActivity"></activity>
+        <activity android:name=".NewsDetailActivity" />
+        <activity android:name=".Comm_Activity"
+            android:label="Comm."
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /></activity>
     </application>
 
 </manifest>

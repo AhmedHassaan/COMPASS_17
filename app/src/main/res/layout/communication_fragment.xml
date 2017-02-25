@@ -12,7 +12,6 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
         android:divider="@null"
         android:listSelector="@android:color/transparent"
         android:transcriptMode="alwaysScroll" />

@@ -1,18 +1,23 @@
 package com.example.amr.compass_17;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.AboutUsFragment;
-import com.example.amr.compass_17.Fragments.ComminucationFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
+import com.example.amr.compass_17.data.Users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,17 +27,24 @@ public class MainActivity extends AppCompatActivity {
     final int HOMEICON_POSTION = 0;
     final int WORKSHOPICON_POSTION = 1;
     final int ABOUTUS_POSTION = 2;
-    final int COMM_POSITION = 3;
     ViewPager mPager;
-    ImageView homeIcon, aboutusIcon, workshopIcon,commIcon;
-    int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected, R.drawable.home_selected};
-    int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
-    int[] images = {R.drawable.home_selected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected, R.drawable.home_unselected};
+    Toolbar toolbar;
+    Users data;
+    ImageView homeIcon, aboutusIcon, workshopIcon;
+    int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected};
+    int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected};
+    int[] images = {R.drawable.home_selected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        data = new Users(this);
+        if(data.getLogin()){
+            startService(new Intent(this, NotificationServices.class));
+        }
         if(getIntent().getExtras()!=null) {
             Bundle b = getIntent().getExtras();
             String s = b.getString("p");
@@ -46,14 +58,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new HomeFragment());
         fragmentList.add(new SessionsFragment());
         fragmentList.add(new AboutUsFragment());
-        fragmentList.add(new ComminucationFragment());
 
 
         mPager = (ViewPager) findViewById(R.id.pager);
         homeIcon = (ImageView) findViewById(R.id.home_icon);
         workshopIcon = (ImageView) findViewById(R.id.workshop_icon);
         aboutusIcon = (ImageView) findViewById(R.id.aboutus_icon);
-        commIcon = (ImageView) findViewById(R.id.comm_icon);
         setImages();
 
         imagesOnClickListener();
@@ -94,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         homeIcon.setImageResource(images[HOMEICON_POSTION]);
         workshopIcon.setImageResource(images[WORKSHOPICON_POSTION]);
         aboutusIcon.setImageResource(images[ABOUTUS_POSTION]);
-        commIcon.setImageResource(images[COMM_POSITION]);
     }
 
     void imagesOnClickListener() {
@@ -127,16 +136,21 @@ public class MainActivity extends AppCompatActivity {
                 mPager.setCurrentItem(ABOUTUS_POSTION);
             }
         });
+    }
 
-        commIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setUnSelectedImages();
-                setSelectedImage(COMM_POSITION);
-                setImages();
-                mPager.setCurrentItem(COMM_POSITION);
-            }
-        });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.comm,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.comm){
+            startActivity(new Intent(this,Comm_Activity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
