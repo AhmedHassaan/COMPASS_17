@@ -41,34 +41,36 @@ public class ComminucationFragment extends Fragment {
         db = FirebaseDatabase.getInstance().getReference();
         adapter = new messageAdapter(getActivity(), R.layout.onemessage, messages);
         listView.setAdapter(adapter);
-        DatabaseReference db1 = db.child("Message").child(workshop);
-        db1.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                messages.add(dataSnapshot.getValue(String.class));
-                adapter.notifyDataSetChanged();
-            }
+        if(data.getLogin()) {
+            DatabaseReference db1 = db.child("Message").child(workshop);
+            db1.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    messages.add(dataSnapshot.getValue(String.class));
+                    adapter.notifyDataSetChanged();
+                }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-            }
+                }
 
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }
         return root;
     }
 }

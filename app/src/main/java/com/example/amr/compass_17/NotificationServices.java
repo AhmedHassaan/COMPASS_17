@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.NotificationCompat;
 
 import com.example.amr.compass_17.data.ControlRealm;
+import com.example.amr.compass_17.data.Event;
 import com.example.amr.compass_17.data.Users;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -35,50 +36,110 @@ public class NotificationServices extends Service {
     public void onCreate() {
         super.onCreate();
         data = new Users(getBaseContext());
+        realm = new ControlRealm(getBaseContext());
         db = FirebaseDatabase.getInstance().getReference();
         Intent intent = new Intent(getBaseContext(), SplashActivity.class);
         final PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
         final NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
         final String workshop = data.getWorkshop();
-        DatabaseReference db1 = db.child("Message").child(workshop);
-        db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String lastMess = data.getLastMessage();
-                String msg = dataSnapshot.getValue(String.class);
-                if (!lastMess.equals(msg)) {
-                    data.setLastMessage(msg);
-                    NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
-                    notification.setContentIntent(pendingIntent)
-                            .setAutoCancel(true)
-                            .setSmallIcon(R.drawable.compass)
-                            .setContentTitle(workshop)
-                            .setContentText(dataSnapshot.getValue(String.class))
-                            .setOnlyAlertOnce(true);
-                    notificationManager.notify(0, notification.build());
+        if(data.getLogin()) {
+            if (data.getMessNotificationActivate()) {
+                DatabaseReference db1 = db.child("Message").child(workshop);
+                db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        String lastMess = data.getLastMessage();
+                        String msg = dataSnapshot.getValue(String.class);
+                        if (!lastMess.equals(msg)) {
+                            data.setLastMessage(msg);
+                            NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
+                            notification.setContentIntent(pendingIntent)
+                                    .setAutoCancel(true)
+                                    .setSmallIcon(R.drawable.compass)
+                                    .setContentTitle(workshop)
+                                    .setContentText(dataSnapshot.getValue(String.class))
+                                    .setOnlyAlertOnce(true);
+                            notificationManager.notify(0, notification.build());
+                        }
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            } else {
+                data.setMessNotificationActivate();
+            }
+        }
+        if(data.getEventNotificationActivate()){
+            DatabaseReference db1 = db.child("events");
+            db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    String lastevent = data.getLastEvent();
+                    String eve = dataSnapshot.getValue(String.class);
+                    if(!lastevent.equals(eve)){
+                        data.setLastEvent(eve);
+                        String[] ss = eve.split("---");
+                        Event event = new Event();
+                        event.setName(ss[0]);
+                        event.setLocation(ss[1]);
+                        event.setDescription(ss[2]);
+                        event.setImage(ss[3]);
+                        event.setTime(ss[4]);
+                        realm.putEvent(event);
+                        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
+                        notification.setContentIntent(pendingIntent)
+                                .setAutoCancel(true)
+                                .setSmallIcon(R.drawable.compass)
+                                .setContentTitle(ss[0])
+                                .setContentText(ss[2])
+                                .setOnlyAlertOnce(true);
+                        notificationManager.notify(0, notification.build());
+                    }
                 }
-            }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-            }
+                }
 
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }
+        else{
+            data.setEventNotificationActivate();
+        }
+
     }
 
 

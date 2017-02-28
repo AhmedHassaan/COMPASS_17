@@ -42,10 +42,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         data = new Users(this);
-        if(data.getLogin()){
-            startService(new Intent(this, NotificationServices.class));
-        }
-        if(getIntent().getExtras()!=null) {
+        startService(new Intent(this, NotificationServices.class));
+        if (getIntent().getExtras() != null) {
             Bundle b = getIntent().getExtras();
             String s = b.getString("p");
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();

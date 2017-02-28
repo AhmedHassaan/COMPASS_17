@@ -37,12 +37,12 @@ public class Users {
     }
 
     public void setLastMessage(String s){
-        set.putString("last",s);
+        set.putString("lastM",s);
         set.commit();
     }
 
     public String getLastMessage(){
-        return get.getString("last",de);
+        return get.getString("lastM",de);
     }
 
     public void setFirstTime(){
@@ -54,4 +54,38 @@ public class Users {
         return get.getBoolean("first",true);
     }
 
+    public boolean getEventFirstSync(){
+        return get.getBoolean("eventfirst",false);
+    }
+
+    public void setEventFirstSync(){
+        set.putBoolean("eventfirst",true);
+        set.commit();
+    }
+
+    public void setEventNotificationActivate(){
+        set.putBoolean("startnot",true);
+        set.commit();
+    }
+
+    public boolean getEventNotificationActivate(){
+        return get.getBoolean("startnot",false);
+    }
+    public void setMessNotificationActivate(){
+        set.putBoolean("startmess",true);
+        set.commit();
+    }
+
+    public boolean getMessNotificationActivate(){
+        return get.getBoolean("startmess",false);
+    }
+
+    public void setLastEvent(String s){
+        set.putString("lastE",s);
+        set.commit();
+    }
+
+    public String getLastEvent(){
+        return get.getString("lastE",de);
+    }
 }
