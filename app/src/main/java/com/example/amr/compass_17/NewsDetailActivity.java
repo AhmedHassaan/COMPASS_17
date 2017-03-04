@@ -42,8 +42,8 @@ public class NewsDetailActivity extends AppCompatActivity {
                 .load(intent.getStringExtra("image")).into(image);
 
 
-        Explode explode = new Explode();
+        /*Explode explode = new Explode();
         explode.setDuration(750);
-        getWindow().setEnterTransition(explode);
+        getWindow().setEnterTransition(explode);*/
     }
 }

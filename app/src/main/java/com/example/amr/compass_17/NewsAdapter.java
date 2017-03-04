@@ -62,12 +62,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     public void explodeAnimation(News news)
     {
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context);
         Intent intent = new Intent(context,NewsDetailActivity.class);
         intent.putExtra("title",news.getTitle());
         intent.putExtra("image",news.getImage());
         intent.putExtra("article",news.getArticle());
-        context.startActivity(intent,options.toBundle());
+        context.startActivity(intent);
     }
 
 

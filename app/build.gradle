@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.amr.compass_17"
-        minSdkVersion 21
+        minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
