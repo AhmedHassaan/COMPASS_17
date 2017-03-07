@@ -1,14 +1,10 @@
 package com.example.amr.compass_17;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,17 +38,6 @@ public class LogInActivity extends AppCompatActivity {
         //Text-----------
 
         login_emailEditText = (EditText) findViewById(R.id.Email_logIn_EditText);
-
-
-        //ToolBar--------------------------
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.MyToolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
-        collapsingToolbarLayout.setTitle("Welcome");
-        Context context = this;
-        collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(context, R.color.black));
-        collapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(context, R.color.white));
 
         if(data.getFirstTime()) {
             db = FirebaseDatabase.getInstance().getReference();

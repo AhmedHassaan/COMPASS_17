@@ -88,4 +88,41 @@ public class Users {
     public String getLastEvent(){
         return get.getString("lastE",de);
     }
+
+    public void setWorkshopPlaceMap(String map,String workshop){
+        String s = workshop + "Map";
+        set.putString(s,map);
+        set.commit();
+    }
+
+    public void setWorkshopPlaceName(String name,String workshop){
+        String s = workshop + "PlaceName";
+        set.putString(s,name);
+        set.commit();
+    }
+    public void setWorkshopTime(String time,String workshop){
+        String s = workshop + "Time";
+        set.putString(s,time);
+        set.commit();
+    }
+
+    public String getWorkshopPlaceMap(String workshop){
+        String s = workshop + "Map";
+        return get.getString(s,de);
+    }
+    public String getWorkshopPlaceName(String workshop){
+        String s = workshop + "PlaceName";
+        return get.getString(s,de);
+    }
+    public String getWorkshopTime(String workshop){
+        String s = workshop + "Time";
+        return get.getString(s,de);
+    }
+    public void setFirstWorkshopSync(){
+        set.putBoolean("workshopFirstSync",true);
+        set.commit();
+    }
+    public boolean getFirstWorkshopSync(){
+        return get.getBoolean("workshopFirstSync",false);
+    }
 }

@@ -19,28 +19,15 @@
             android:id="@+id/selectedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scrollbars="vertical"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="@dimen/workshop_margin"
             android:layout_toEndOf="@+id/selectedImage"
             android:layout_toRightOf="@+id/selectedImage"
-            android:text="Ahmeeed"
+            android:text="Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it."
             android:textSize="@dimen/workshop_text_size" />
-
-        <ImageButton
-            android:id="@+id/button"
-            android:layout_width="@dimen/location_icon_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/location_icon_margin"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/maps_icon"
-            android:textSize="15sp" />
 
         <ImageButton
             android:id="@+id/selectedImage"
@@ -53,6 +40,19 @@
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             android:src="@drawable/cliche" />
+
+        <Button
+            android:id="@+id/infoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:textSize="15sp"
+            android:layout_marginLeft="@dimen/location_icon_margin"
+            android:layout_marginRight="@dimen/location_icon_margin"
+            android:text="Get Info"
+            android:layout_below="@+id/selectedImage"
+            android:layout_toStartOf="@+id/selectedText" />
 
     </RelativeLayout>
 

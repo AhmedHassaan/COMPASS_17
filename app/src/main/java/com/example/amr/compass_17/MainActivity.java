@@ -18,6 +18,11 @@ import com.example.amr.compass_17.Fragments.AboutUsFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
 import com.example.amr.compass_17.data.Users;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager mPager;
     Toolbar toolbar;
     Users data;
+    DatabaseReference db;
     ImageView homeIcon, aboutusIcon, workshopIcon;
     int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected};
     int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected};
@@ -40,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        db = FirebaseDatabase.getInstance().getReference();
         setSupportActionBar(toolbar);
         data = new Users(this);
         startService(new Intent(this, NotificationServices.class));
@@ -49,6 +56,243 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         }
         setViewPager();
+        if(!data.getFirstWorkshopSync()){
+            data.setFirstWorkshopSync();
+            DatabaseReference workshopref = db.child("Workshop").child("sugarrush");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"sugarrush");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"sugarrush");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"sugarrush");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            workshopref = db.child("Workshop").child("dnet");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"dnet");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"dnet");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"dnet");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            workshopref = db.child("Workshop").child("cliche");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"cliche");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"cliche");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"cliche");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            workshopref = db.child("Workshop").child("laypuzz");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"laypuzz");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"laypuzz");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"laypuzz");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            workshopref = db.child("Workshop").child("legos");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"legos");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"legos");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"legos");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            workshopref = db.child("Workshop").child("pharopell");
+            workshopref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    switch (dataSnapshot.getKey()){
+                        case "map":
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"pharopell");
+                            break;
+                        case "name":
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"pharopell");
+                            break;
+                        case "time":
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"pharopell");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 
     void setViewPager() {
