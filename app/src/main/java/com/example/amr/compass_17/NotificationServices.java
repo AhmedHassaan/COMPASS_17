@@ -42,7 +42,7 @@ public class NotificationServices extends Service {
         final PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
         final NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
         final String workshop = data.getWorkshop();
-        if(data.getLogin()) {
+        if (data.getLogin()) {
             DatabaseReference workshopref = db.child("Workshop").child("sugarrush");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
@@ -52,15 +52,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "sugarrush");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "sugarrush");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "sugarrush");
                             break;
                         default:
                             break;
@@ -91,15 +91,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "dnet");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "dnet");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "dnet");
                             break;
                         default:
                             break;
@@ -130,15 +130,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "cliche");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "cliche");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "cliche");
                             break;
                         default:
                             break;
@@ -169,15 +169,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "laypuzz");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "laypuzz");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "laypuzz");
                             break;
                         default:
                             break;
@@ -208,15 +208,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "legos");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "legos");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "legos");
                             break;
                         default:
                             break;
@@ -247,15 +247,15 @@ public class NotificationServices extends Service {
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    switch (dataSnapshot.getKey()){
+                    switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "pharopell");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "pharopell");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "pharopell");
                             break;
                         default:
                             break;
@@ -278,58 +278,56 @@ public class NotificationServices extends Service {
                 }
             });
 
-            if (data.getMessNotificationActivate()) {
-                DatabaseReference db1 = db.child("Message").child(workshop);
-                db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        String lastMess = data.getLastMessage();
-                        String msg = dataSnapshot.getValue(String.class);
-                        if (!lastMess.equals(msg)) {
-                            data.setLastMessage(msg);
-                            NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
-                            notification.setContentIntent(pendingIntent)
-                                    .setAutoCancel(true)
-                                    .setSmallIcon(R.drawable.compass)
-                                    .setContentTitle(workshop)
-                                    .setContentText(dataSnapshot.getValue(String.class))
-                                    .setOnlyAlertOnce(true);
-                            notificationManager.notify(0, notification.build());
-                        }
+
+            DatabaseReference db1 = db.child("Message").child(workshop);
+            db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    String lastMess = data.getLastMessage();
+                    String msg = dataSnapshot.getValue(String.class);
+                    if (!lastMess.equals(msg)) {
+                        data.setLastMessage(msg);
+                        realm.setMessage(dataSnapshot.getValue(String.class),workshop);
+                        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext());
+                        notification.setContentIntent(pendingIntent)
+                                .setAutoCancel(true)
+                                .setSmallIcon(R.drawable.compass)
+                                .setContentTitle(workshop)
+                                .setContentText(dataSnapshot.getValue(String.class))
+                                .setOnlyAlertOnce(true);
+                        notificationManager.notify(0, notification.build());
                     }
+                }
 
-                    @Override
-                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-                    }
+                }
 
-                    @Override
-                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-                    }
+                }
 
-                    @Override
-                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-                    }
+                }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
-            } else {
-                data.setMessNotificationActivate();
-            }
+                }
+            });
         }
-        if(data.getEventNotificationActivate()){
+        if(data.getEventNotificationActivate()) {
             DatabaseReference db1 = db.child("events");
             db1.limitToLast(1).addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     String lastevent = data.getLastEvent();
                     String eve = dataSnapshot.getValue(String.class);
-                    if(!lastevent.equals(eve)){
+                    if (!lastevent.equals(eve)) {
                         data.setLastEvent(eve);
                         String[] ss = eve.split("---");
                         Event event = new Event();

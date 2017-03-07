@@ -63,23 +63,6 @@ public class Users {
         set.commit();
     }
 
-    public void setEventNotificationActivate(){
-        set.putBoolean("startnot",true);
-        set.commit();
-    }
-
-    public boolean getEventNotificationActivate(){
-        return get.getBoolean("startnot",false);
-    }
-    public void setMessNotificationActivate(){
-        set.putBoolean("startmess",true);
-        set.commit();
-    }
-
-    public boolean getMessNotificationActivate(){
-        return get.getBoolean("startmess",false);
-    }
-
     public void setLastEvent(String s){
         set.putString("lastE",s);
         set.commit();
@@ -125,4 +108,23 @@ public class Users {
     public boolean getFirstWorkshopSync(){
         return get.getBoolean("workshopFirstSync",false);
     }
+
+    public void setFirstMessageSync(){
+        set.putBoolean("firstMSync",true);
+        set.commit();
+    }
+
+    public boolean getFirstMessageSync(){
+        return get.getBoolean("firstMSync",false);
+    }
+
+    public void setEventNotificationActivate(){
+        set.putBoolean("startnot",true);
+        set.commit();
+    }
+
+    public boolean getEventNotificationActivate(){
+        return get.getBoolean("startnot",false);
+    }
+
 }

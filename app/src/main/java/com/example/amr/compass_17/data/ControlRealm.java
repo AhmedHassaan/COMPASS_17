@@ -1,6 +1,7 @@
 package com.example.amr.compass_17.data;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -90,6 +91,29 @@ public class ControlRealm {
             ev.setName(e.getName());
             all.add(ev);
         }
+        return all;
+    }
+
+    public void setMessage(final String body, final String workshop){
+        Message.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                MessageRealm m = Message.createObject(MessageRealm.class);
+                m.setBody(body);
+                m.setWorkshop(workshop);
+                Log.i("BFF",body);
+            }
+        });
+    }
+
+    public ArrayList<String> getMessages(String workshop){
+        ArrayList<String> all = new ArrayList<>();
+        RealmResults<MessageRealm> results = Message.where(MessageRealm.class).equalTo("workshop",workshop).findAll();
+        for(MessageRealm m : results) {
+            all.add(m.getBody());
+            Log.i("BFF",m.getBody());
+        }
+
         return all;
     }
 }

@@ -17,6 +17,7 @@ import com.example.amr.compass_17.Adapters.MyFragmentPageAdapter;
 import com.example.amr.compass_17.Fragments.AboutUsFragment;
 import com.example.amr.compass_17.Fragments.HomeFragment;
 import com.example.amr.compass_17.Fragments.SessionsFragment;
+import com.example.amr.compass_17.data.ControlRealm;
 import com.example.amr.compass_17.data.Users;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     final int ABOUTUS_POSTION = 2;
     ViewPager mPager;
     Toolbar toolbar;
+    ControlRealm realm;
+    String workshop;
     Users data;
     DatabaseReference db;
     ImageView homeIcon, aboutusIcon, workshopIcon;
@@ -45,17 +48,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        realm = new ControlRealm(getApplicationContext());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         db = FirebaseDatabase.getInstance().getReference();
         setSupportActionBar(toolbar);
         data = new Users(this);
-        startService(new Intent(this, NotificationServices.class));
         if (getIntent().getExtras() != null) {
             Bundle b = getIntent().getExtras();
             String s = b.getString("p");
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         }
         setViewPager();
+        workshop = data.getWorkshop();
+        if(data.getLogin() && !data.getFirstMessageSync()){
+            data.setFirstMessageSync();
+            DatabaseReference db1 = db.child("Message").child(workshop);
+            db1.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    realm.setMessage(dataSnapshot.getValue(String.class),workshop);
+                    data.setLastMessage(dataSnapshot.getValue(String.class));
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
         if(!data.getFirstWorkshopSync()){
             data.setFirstWorkshopSync();
             DatabaseReference workshopref = db.child("Workshop").child("sugarrush");
@@ -293,6 +329,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
     }
 
     void setViewPager() {

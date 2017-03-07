@@ -1,5 +1,6 @@
 package com.example.amr.compass_17.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.amr.compass_17.News;
 import com.example.amr.compass_17.NewsAdapter;
+import com.example.amr.compass_17.NotificationServices;
 import com.example.amr.compass_17.R;
 import com.example.amr.compass_17.data.ControlRealm;
 import com.example.amr.compass_17.data.Event;
@@ -60,6 +62,7 @@ public class HomeFragment extends Fragment {
             db1.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    data.setLastEvent(dataSnapshot.getValue(String.class));
                     String[] ss = dataSnapshot.getValue(String.class).split("---");
                     Event event = new Event();
                     event.setName(ss[0]);
@@ -102,6 +105,7 @@ public class HomeFragment extends Fragment {
             newsAdapter.notifyDataSetChanged();
         }
 
+        getActivity().startService(new Intent(getActivity(), NotificationServices.class));
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
