@@ -6,6 +6,6 @@
     <item
         android:id="@+id/comm"
         android:visible="true"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:title="Communiction"/>
 </menu>

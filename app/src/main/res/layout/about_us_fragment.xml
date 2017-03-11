@@ -1,15 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="5dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is About Us Fragment"
-        android:id="@+id/textView"
-        android:textSize="20dp"
-        android:textColor="#000000"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/compass" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:padding="7dp"
+                    android:background="@drawable/rect"
+                    android:text="Mission
+To furnish the undergraduates with the most needed technical and interpersonal skills needed by the market in Egypt through simulating the work environment."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="Our objectives are:
+• Raising the qualifications of students by organizing the required workshops.
+• Learning the most recent techniques and tools needed in the market nowadays.
+• Approaching the business mentalities while we are still undergraduates.
+• Serving the community through various events.
+• Seeking Professionalism and experience.
+• Sharing knowledge and working with it."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="This year COMPASS offers a magnificent variety of workshops"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sugarrush" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="Hello Nougat
+ It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dnet" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="Triple Double U
+Are you considering web development as a career? Do you simply want to learn to create your own web sites but don't know where to start?
+This is the right place for you to discover the dos and don'ts for designing for the web and learn how to create exciting and effective website designs and how to create responsive websites that deliver a message to any screen size. Don't hesitate to join us."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cliche" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="Image Station
+Everything in the light is more vibrant.
+But the light isn’t always there. In the Image Station you’ll learn how to turn a simple photo to a scene from your dreams. In Image Station you’ll be taught the basics of Photoshop starting from the simple editing process to adding the perfect light and scene to your photo. The Image Station will allow you to acquire the suitable skills for being a professional Photoshop-er. Using simple, creative and informative methods you’ll know how to add the final touches to what you might call your own work of art. The Image Station is definitely the next stop in your trip to professionalism."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/pharopell" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="BLINK BLOOM
+-The way to get started is to quit talking and begin doing. You want to achieve your goals, you want to discover yourself, you want to make things happen but it seems a little overwhelming?
+In this workshop, we'll help you to have a deeper look into yourself, overcome your fears like: public speaking, a bad interview, wasting your time.
+Finally, we’ll give you a key to explore your invisible powers such as presentation skills, self-planning and a lot more.
+Join us to begin the magic journey to discover yourself and know what you're capable of."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/legoss" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="6Topaz
+Creativity is thinking out of the box and letting go of your daily routine, In this workshop you'll be able to perceive the world in new ways also finding the hidden parts and generate great ideas and solutions, you’ll learn how to be self-motivated, as the choice is yours, only you can create change in your life, you were created to live a happy, joyful and successful life!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/laypuzz" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:background="@drawable/rect"                    android:text="Ulalia
+If you are interested about marketing, it’s time to take your rocket and join our “Ulalia” planet, where we are going to use our bright minds and spirits to acknowledge marketing skills and principles which will eventually help you learn how to develop, implement a winning marketing strategy using today's tools, figure out best marketing channels, identifying your advertising options and to use marketing to be pioneer in our own business and unique in your life."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

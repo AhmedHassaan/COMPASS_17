@@ -2,6 +2,7 @@ package com.example.amr.compass_17.Fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -59,7 +60,7 @@ public class SessionsFragment extends Fragment {
             selectedWorkshop = "sugerrush";
             cliche.setImageResource(R.drawable.cliche);
             dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrushs);
+            sugarrush.setImageResource(R.drawable.sugarrush);
             pharopell.setImageResource(R.drawable.pharopell);
             laypuzz.setImageResource(R.drawable.laypuzz);
             legoss.setImageResource(R.drawable.legoss);
@@ -212,7 +213,7 @@ public class SessionsFragment extends Fragment {
                 laypuzz.setImageResource(R.drawable.laypuzz);
                 legoss.setImageResource(R.drawable.legosss);
                 selectedImage.setImageResource(R.drawable.legoss);
-                selectedText.setText("Legoss Workshop");
+                selectedText.setText("Blink-Bloom COMPASS17's softskills workshop");
             }
         });
         pharopell.setOnClickListener(new View.OnClickListener() {
@@ -226,7 +227,7 @@ public class SessionsFragment extends Fragment {
                 laypuzz.setImageResource(R.drawable.laypuzz);
                 legoss.setImageResource(R.drawable.legoss);
                 selectedImage.setImageResource(R.drawable.pharopell);
-                selectedText.setText("Pharopell Workshop");
+                selectedText.setText("Ulalia : COMPASS17's Marketing workshop");
             }
         });
         sugarrush.setOnClickListener(new View.OnClickListener() {
@@ -235,12 +236,14 @@ public class SessionsFragment extends Fragment {
                 selectedWorkshop = "sugarrush";
                 cliche.setImageResource(R.drawable.cliche);
                 dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrushs);
+                sugarrush.setImageResource(R.drawable.sugarrush);
                 pharopell.setImageResource(R.drawable.pharopell);
                 laypuzz.setImageResource(R.drawable.laypuzz);
                 legoss.setImageResource(R.drawable.legoss);
                 selectedImage.setImageResource(R.drawable.sugarrush);
-                selectedText.setText("Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it.");
+                Drawable drawable = getResources().getDrawable(R.drawable.ring);
+                sugarrush.setBackground(drawable);
+                selectedText.setText("Hello Nougat : COMPASS17's Mobile Development workshop");
             }
         });
         return view;
