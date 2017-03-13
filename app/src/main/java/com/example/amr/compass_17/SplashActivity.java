@@ -11,23 +11,17 @@ import com.example.amr.compass_17.data.Users;
 
 public class SplashActivity extends AppCompatActivity {
     Users data;
-    ImageView logo,main,spon1,spon2,spon3;
+    ImageView logo,main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         logo=(ImageView)findViewById(R.id.img_logo);
-        spon1=(ImageView)findViewById(R.id.spons1);
-        spon2=(ImageView)findViewById(R.id.spons2);
-        spon3=(ImageView)findViewById(R.id.spons3);
         main=(ImageView)findViewById(R.id.maain);
         data = new Users(getApplicationContext());
         Animation fadeee = AnimationUtils.loadAnimation(this,R.anim.faade);
         Animation mAnim= AnimationUtils.loadAnimation(this,R.anim.splash_anim);
-        spon1.startAnimation(fadeee);
-        spon2.startAnimation(fadeee);
-        spon3.startAnimation(fadeee);
         logo.startAnimation(fadeee);
         main.startAnimation(mAnim);
         mAnim.setAnimationListener(new Animation.AnimationListener() {

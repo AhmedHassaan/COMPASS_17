@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/mandala"
     android:orientation="vertical"
     android:padding="5dp">
 
@@ -69,7 +69,7 @@ To furnish the undergraduates with the most needed technical and interpersonal s
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/sugarrush" />
+                    android:src="@drawable/nougat" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -88,7 +88,7 @@ To furnish the undergraduates with the most needed technical and interpersonal s
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/dnet" />
+                    android:src="@drawable/trible" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -108,7 +108,7 @@ This is the right place for you to discover the dos and don'ts for designing for
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/cliche" />
+                    android:src="@drawable/photoshop" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -128,7 +128,7 @@ But the light isn’t always there. In the Image Station you’ll learn how to t
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/pharopell" />
+                    android:src="@drawable/smily" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -151,7 +151,7 @@ Join us to begin the magic journey to discover yourself and know what you're cap
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/legoss" />
+                    android:src="@drawable/topaz" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -169,7 +169,7 @@ Creativity is thinking out of the box and letting go of your daily routine, In t
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/laypuzz" />
+                    android:src="@drawable/ulalia" />
 
                 <TextView
                     android:layout_width="match_parent"

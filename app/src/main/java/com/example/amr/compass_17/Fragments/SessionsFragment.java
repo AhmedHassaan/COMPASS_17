@@ -2,7 +2,6 @@ package com.example.amr.compass_17.Fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,18 +27,18 @@ import butterknife.ButterKnife;
 public class SessionsFragment extends Fragment {
 
 
-    @Bind(R.id.cliche)
-    ImageButton cliche;
-    @Bind(R.id.sugarrush)
-    ImageButton sugarrush;
-    @Bind(R.id.pharopell)
-    ImageButton pharopell;
-    @Bind(R.id.legoss)
-    ImageButton legoss;
-    @Bind(R.id.laypuz)
-    ImageButton laypuzz;
-    @Bind(R.id.dnet)
-    ImageButton dnet;
+    @Bind(R.id.nougat)
+    ImageButton nougat;
+    @Bind(R.id.trible)
+    ImageButton trible;
+    @Bind(R.id.photoshop)
+    ImageButton photoshop;
+    @Bind(R.id.smily)
+    ImageButton smily;
+    @Bind(R.id.topaz)
+    ImageButton topaz;
+    @Bind(R.id.ulalia)
+    ImageButton ulalia;
     @Bind(R.id.selectedImage)
     ImageButton selectedImage;
     @Bind(R.id.selectedText)
@@ -56,72 +55,53 @@ public class SessionsFragment extends Fragment {
         ButterKnife.bind(this, view);
         data = new Users(getActivity());
         selectedText.setMovementMethod(new ScrollingMovementMethod());
-        if (data.getWorkshop().equals("sugerrush")) {
-            selectedWorkshop = "sugerrush";
-            cliche.setImageResource(R.drawable.cliche);
-            dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopell);
-            laypuzz.setImageResource(R.drawable.laypuzz);
-            legoss.setImageResource(R.drawable.legoss);
-            selectedImage.setImageResource(R.drawable.sugarrush);
+        if (data.getWorkshop().equals("nougat")) {
+            selectedWorkshop = "nougat";
+            reset();
+            nougat.setImageResource(R.drawable.nougats);
+//            nougat.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.nougat);
             selectedText.setText("Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it.");
         }
-        if (data.getWorkshop().equals("pharopell")) {
-            selectedWorkshop = "pharopell";
-            cliche.setImageResource(R.drawable.cliche);
-            dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopells);
-            laypuzz.setImageResource(R.drawable.laypuzz);
-            legoss.setImageResource(R.drawable.legoss);
-            selectedImage.setImageResource(R.drawable.pharopell);
-            selectedText.setText("Pharopell Workshop");
+        if (data.getWorkshop().equals("photoshop")) {
+            selectedWorkshop = "photoshop";
+            reset();
+            photoshop.setImageResource(R.drawable.photoshops);
+//            photoshop.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.photoshop);
+            selectedText.setText("Photoshop Workshop");
         }
-        if (data.getWorkshop().equals("legos")) {
-            selectedWorkshop = "legos";
-            cliche.setImageResource(R.drawable.cliche);
-            dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopell);
-            laypuzz.setImageResource(R.drawable.laypuzz);
-            legoss.setImageResource(R.drawable.legosss);
-            selectedImage.setImageResource(R.drawable.legoss);
-            selectedText.setText("Legoss Workshop");
+        if (data.getWorkshop().equals("trible")) {
+            selectedWorkshop = "trible";
+            reset();
+            trible.setImageResource(R.drawable.tribles);
+//            trible.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.trible);
+            selectedText.setText("Triple double U Workshop");
         }
-        if (data.getWorkshop().equals("laypuzz")) {
-            selectedWorkshop = "laypuzz";
-            cliche.setImageResource(R.drawable.cliche);
-            dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopell);
-            laypuzz.setImageResource(R.drawable.laypuzzs);
-            legoss.setImageResource(R.drawable.legoss);
-            selectedImage.setImageResource(R.drawable.laypuzz);
-            selectedText.setText("Laypyzz Workshop");
+        if (data.getWorkshop().equals("smily")) {
+            selectedWorkshop = "smily";
+            reset();
+            smily.setImageResource(R.drawable.smilys);
+//            smily.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.smily);
+            selectedText.setText("Smiley Face Workshop");
         }
-        if (data.getWorkshop().equals("cliche")) {
-            selectedWorkshop = "cliche";
-            cliche.setImageResource(R.drawable.cliches);
-            dnet.setImageResource(R.drawable.dnet);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopell);
-            laypuzz.setImageResource(R.drawable.laypuzz);
-            legoss.setImageResource(R.drawable.legoss);
-            selectedImage.setImageResource(R.drawable.cliche);
-            selectedText.setText("Cliche Workshop");
+        if (data.getWorkshop().equals("ulalia")) {
+            selectedWorkshop = "ulalia";
+            reset();
+            ulalia.setImageResource(R.drawable.ulalias);
+//            ulalia.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.ulalia);
+            selectedText.setText("Ulalia Workshop");
         }
-        if (data.getWorkshop().equals("dnet")) {
-            selectedWorkshop = "dnet";
-            cliche.setImageResource(R.drawable.cliche);
-            dnet.setImageResource(R.drawable.dnets);
-            sugarrush.setImageResource(R.drawable.sugarrush);
-            pharopell.setImageResource(R.drawable.pharopell);
-            laypuzz.setImageResource(R.drawable.laypuzz);
-            legoss.setImageResource(R.drawable.legoss);
-            selectedImage.setImageResource(R.drawable.dnet);
-            selectedText.setText("Triple Double U : Are you considering web development as a career? Do you simply want to learn to create your own web sites but don't know where to start? \n" +
-                    "This is the right place for you to discover the dos and don'ts for designing for the web and learn how to create exciting and effective website designs & how to create responsive websites that deliver a message to any screen size. Don't hesitate to join us.");
+        if (data.getWorkshop().equals("topaz")) {
+            selectedWorkshop = "topaz";
+            reset();
+            topaz.setImageResource(R.drawable.topazs);
+//            topaz.setBackgroundResource(R.drawable.ring);
+            selectedImage.setImageResource(R.drawable.topaz);
+            selectedText.setText("Topaz Workshop");
         }
 
         if(!data.getLogin()){
@@ -158,162 +138,88 @@ public class SessionsFragment extends Fragment {
             }
         });
 
-        dnet.setOnClickListener(new View.OnClickListener() {
+        trible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "dnet";
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnets);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.dnet);
-                selectedText.setText("Triple Double U : Are you considering web development as a career? Do you simply want to learn to create your own web sites but don't know where to start? \n" +
-                        "This is the right place for you to discover the dos and don'ts for designing for the web and learn how to create exciting and effective website designs & how to create responsive websites that deliver a message to any screen size. Don't hesitate to join us.");
+                selectedWorkshop = "trible";
+                reset();
+                trible.setImageResource(R.drawable.tribles);
+//                trible.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.trible);
+                selectedText.setText("Triple double U Workshop");
             }
         });
 
-        cliche.setOnClickListener(new View.OnClickListener() {
+        nougat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "cliche";
-                cliche.setImageResource(R.drawable.cliches);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.cliche);
-                selectedText.setText("Cliche Workshop");
+                selectedWorkshop = "nougat";
+                reset();
+                nougat.setImageResource(R.drawable.nougats);
+//                nougat.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.nougat);
+                selectedText.setText("Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it.");
             }
         });
-        laypuzz.setOnClickListener(new View.OnClickListener() {
+        topaz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "laypuzz";
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzzs);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.laypuzz);
-                selectedText.setText("Laypyzz Workshop");
+                selectedWorkshop = "topaz";
+                reset();
+                topaz.setImageResource(R.drawable.topazs);
+//                topaz.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.topaz);
+                selectedText.setText("Topaz Workshop");
             }
         });
-        legoss.setOnClickListener(new View.OnClickListener() {
+        ulalia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "legos";
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legosss);
-                selectedImage.setImageResource(R.drawable.legoss);
-                selectedText.setText("Blink-Bloom COMPASS17's softskills workshop");
+                selectedWorkshop = "ulalia";
+                reset();
+                ulalia.setImageResource(R.drawable.ulalias);
+//                ulalia.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.ulalia);
+                selectedText.setText("Ulalia Workshop");
             }
         });
-        pharopell.setOnClickListener(new View.OnClickListener() {
+        photoshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "pharopell";
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopells);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.pharopell);
-                selectedText.setText("Ulalia : COMPASS17's Marketing workshop");
+                selectedWorkshop = "photoshop";
+                reset();
+                photoshop.setImageResource(R.drawable.photoshops);
+//                photoshop.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.photoshop);
+                selectedText.setText("Photoshop Workshop");
             }
         });
-        sugarrush.setOnClickListener(new View.OnClickListener() {
+        smily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedWorkshop = "sugarrush";
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.sugarrush);
-                Drawable drawable = getResources().getDrawable(R.drawable.ring);
-                sugarrush.setBackground(drawable);
-                selectedText.setText("Hello Nougat : COMPASS17's Mobile Development workshop");
+                selectedWorkshop = "smily";
+                reset();
+                smily.setImageResource(R.drawable.smilys);
+//                smily.setBackgroundResource(R.drawable.ring);
+                selectedImage.setImageResource(R.drawable.smily);
+                selectedText.setText("Smiley Face Workshop");
             }
         });
         return view;
     }
 
-    /*
-    @OnClick({R.id.cliche,R.id.sugarrush,R.id.pharopell,R.id.dnet,R.id.legoss,R.id.laypuz})
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.cliche:
-                cliche.setImageResource(R.drawable.cliches);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.cliche);
-                selectedText.setText("Cliche Workshop");
-                break;
-            case R.id.sugarrush:
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrushs);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.sugarrush);
-                selectedText.setText("Sugarrush Workshop");
-                break;
-            case R.id.laypuz:
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzzs);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.laypuzz);
-                selectedText.setText("Laypyzz Workshop");
-                break;
-            case R.id.legoss:
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legosss);
-                selectedImage.setImageResource(R.drawable.legoss);
-                selectedText.setText("Legoss Workshop");
-                break;
-            case R.id.pharopell:
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnet);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopells);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.pharopell);
-                selectedText.setText("Pharopell Workshop");
-                break;
-            case R.id.dnet:
-                cliche.setImageResource(R.drawable.cliche);
-                dnet.setImageResource(R.drawable.dnets);
-                sugarrush.setImageResource(R.drawable.sugarrush);
-                pharopell.setImageResource(R.drawable.pharopell);
-                laypuzz.setImageResource(R.drawable.laypuzz);
-                legoss.setImageResource(R.drawable.legoss);
-                selectedImage.setImageResource(R.drawable.dnet);
-                selectedText.setText("Dnet Workshop");
-                break;
-        }
+    public void reset(){
+        topaz.setImageResource(R.drawable.topaz);
+//        nougat.setBackgroundResource(0);
+//        topaz.setBackgroundResource(0);
+//        photoshop.setBackgroundResource(0);
+//        smily.setBackgroundResource(0);
+//        ulalia.setBackgroundResource(0);
+//        trible.setBackgroundResource(0);
+        trible.setImageResource(R.drawable.trible);
+        nougat.setImageResource(R.drawable.nougat);
+        smily.setImageResource(R.drawable.smily);
+        photoshop.setImageResource(R.drawable.photoshop);
+        ulalia.setImageResource(R.drawable.ulalia);
     }
-    */
 }

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/mandala"
     android:weightSum="10"
     tools:context="com.example.amr.compass_17.Fragments.SessionsFragment">
 
@@ -11,9 +12,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.5"
-        android:background="@color/workshop_background"
-        android:padding="5dp">
+        android:layout_weight="3"
+        android:background="#CFD8DC"
+        android:paddingLeft="5dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
 
         <TextView
             android:id="@+id/selectedText"
@@ -22,8 +26,11 @@
             android:scrollbars="vertical"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="@dimen/workshop_margin"
+            android:layout_marginBottom="2dp"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+
             android:layout_toEndOf="@+id/selectedImage"
             android:layout_toRightOf="@+id/selectedImage"
             android:text="Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it."
@@ -32,14 +39,13 @@
         <ImageButton
             android:id="@+id/selectedImage"
             android:layout_width="@dimen/workshop_logo_width"
+            android:layout_centerVertical="true"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/cliche" />
+            android:src="@drawable/trible" />
 
         <Button
             android:id="@+id/infoButton"
@@ -61,6 +67,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/workshop_margin"
         android:layout_marginRight="@dimen/workshop_margin"
+        android:paddingTop="70dp"
         android:layout_weight="6.5"
         android:gravity="center"
         android:orientation="vertical">
@@ -72,7 +79,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/dnet"
+                android:id="@+id/trible"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -81,10 +88,10 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/dnet" />
+                android:src="@drawable/trible" />
 
             <ImageButton
-                android:id="@+id/cliche"
+                android:id="@+id/ulalia"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -93,10 +100,10 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cliche" />
+                android:src="@drawable/ulalia" />
 
             <ImageButton
-                android:id="@+id/laypuz"
+                android:id="@+id/topaz"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -105,7 +112,7 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/laypuzz" />
+                android:src="@drawable/topaz" />
 
         </LinearLayout>
 
@@ -115,7 +122,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/legoss"
+                android:id="@+id/smily"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -124,10 +131,10 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/legoss" />
+                android:src="@drawable/smily" />
 
             <ImageButton
-                android:id="@+id/pharopell"
+                android:id="@+id/photoshop"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -136,10 +143,10 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/pharopell" />
+                android:src="@drawable/photoshop" />
 
             <ImageButton
-                android:id="@+id/sugarrush"
+                android:id="@+id/nougat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -148,7 +155,7 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/sugarrush" />
+                android:src="@drawable/nougat" />
 
         </LinearLayout>
     </LinearLayout>

@@ -43,7 +43,7 @@ public class NotificationServices extends Service {
         final NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
         final String workshop = data.getWorkshop();
         if (data.getLogin()) {
-            DatabaseReference workshopref = db.child("Workshop").child("sugarrush");
+            DatabaseReference workshopref = db.child("Workshop").child("nougat");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -54,13 +54,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "sugarrush");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "nougat");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "sugarrush");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "nougat");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "sugarrush");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "nougat");
                             break;
                         default:
                             break;
@@ -82,7 +82,7 @@ public class NotificationServices extends Service {
 
                 }
             });
-            workshopref = db.child("Workshop").child("dnet");
+            workshopref = db.child("Workshop").child("triple");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -93,13 +93,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "dnet");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "triple");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "dnet");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "triple");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "dnet");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "triple");
                             break;
                         default:
                             break;
@@ -121,7 +121,7 @@ public class NotificationServices extends Service {
 
                 }
             });
-            workshopref = db.child("Workshop").child("cliche");
+            workshopref = db.child("Workshop").child("topaz");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -132,13 +132,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "cliche");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "topaz");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "cliche");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "topaz");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "cliche");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "topaz");
                             break;
                         default:
                             break;
@@ -160,7 +160,7 @@ public class NotificationServices extends Service {
 
                 }
             });
-            workshopref = db.child("Workshop").child("laypuzz");
+            workshopref = db.child("Workshop").child("smiley");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -171,13 +171,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "laypuzz");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "smiley");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "laypuzz");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "smiley");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "laypuzz");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "smiley");
                             break;
                         default:
                             break;
@@ -199,7 +199,7 @@ public class NotificationServices extends Service {
 
                 }
             });
-            workshopref = db.child("Workshop").child("legos");
+            workshopref = db.child("Workshop").child("photoshop");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -210,13 +210,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "legos");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "photoshop");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "legos");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "photoshop");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "legos");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "photoshop");
                             break;
                         default:
                             break;
@@ -238,7 +238,7 @@ public class NotificationServices extends Service {
 
                 }
             });
-            workshopref = db.child("Workshop").child("pharopell");
+            workshopref = db.child("Workshop").child("ulalia");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -249,13 +249,13 @@ public class NotificationServices extends Service {
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                     switch (dataSnapshot.getKey()) {
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "pharopell");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class), "ulalia");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "pharopell");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class), "ulalia");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "pharopell");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class), "ulalia");
                             break;
                         default:
                             break;

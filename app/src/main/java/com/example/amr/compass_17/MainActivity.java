@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     int[] selectedImages = {R.drawable.home_selected, R.drawable.workshop_selected, R.drawable.aboutus_selected};
     int[] unSelectedImages = {R.drawable.home_unselected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected};
     int[] images = {R.drawable.home_selected, R.drawable.workshop_unselected, R.drawable.aboutus_unselected};
+    Menu myMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,20 +95,20 @@ public class MainActivity extends AppCompatActivity {
 
         if(!data.getFirstWorkshopSync()){
             data.setFirstWorkshopSync();
-            DatabaseReference workshopref = db.child("Workshop").child("sugarrush");
+            DatabaseReference workshopref = db.child("Workshop").child("android");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"android");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"android");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"sugarrush");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"android");
                             break;
                         default:
                             break;
@@ -133,20 +134,20 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            workshopref = db.child("Workshop").child("dnet");
+            workshopref = db.child("Workshop").child("triple");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"triple");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"triple");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"dnet");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"triple");
                             break;
                         default:
                             break;
@@ -172,20 +173,20 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            workshopref = db.child("Workshop").child("cliche");
+            workshopref = db.child("Workshop").child("topaz");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"topaz");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"topaz");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"cliche");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"topaz");
                             break;
                         default:
                             break;
@@ -211,20 +212,20 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            workshopref = db.child("Workshop").child("laypuzz");
+            workshopref = db.child("Workshop").child("smiley");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"smiley");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"smiley");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"laypuzz");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"smiley");
                             break;
                         default:
                             break;
@@ -250,20 +251,20 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            workshopref = db.child("Workshop").child("legos");
+            workshopref = db.child("Workshop").child("photoshop");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"photoshop");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"photoshop");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"legos");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"photoshop");
                             break;
                         default:
                             break;
@@ -289,20 +290,20 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            workshopref = db.child("Workshop").child("pharopell");
+            workshopref = db.child("Workshop").child("ulalia");
             workshopref.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                     switch (dataSnapshot.getKey()){
                         case "map":
-                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopPlaceMap(dataSnapshot.getValue(String.class),"ulalia");
                             break;
                         case "name":
-                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopPlaceName(dataSnapshot.getValue(String.class),"ulalia");
                             break;
                         case "time":
-                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"pharopell");
+                            data.setWorkshopTime(dataSnapshot.getValue(String.class),"ulalia");
                             break;
                         default:
                             break;
@@ -421,6 +422,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.comm,menu);
+        myMenu = menu;
+        if(!data.getLogin())
+            if(myMenu!=null)
+                myMenu.getItem(0).setVisible(false);
         return true;
     }
 

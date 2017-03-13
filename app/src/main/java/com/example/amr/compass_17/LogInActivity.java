@@ -24,7 +24,7 @@ public class LogInActivity extends AppCompatActivity {
     ControlRealm realm;
     DatabaseReference db;
     private EditText login_emailEditText;
-    private Button logIn;
+    private Button logIn,guest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class LogInActivity extends AppCompatActivity {
         realm = new ControlRealm(this);
         //Buttons-----------------
         logIn = (Button) findViewById(R.id.logIn_btn);
-
+        guest = (Button) findViewById(R.id.guest);
         //Text-----------
 
         login_emailEditText = (EditText) findViewById(R.id.Email_logIn_EditText);
@@ -71,9 +71,6 @@ public class LogInActivity extends AppCompatActivity {
                 }
             });
             data.setFirstTime();
-        }
-        else{
-            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
         }
         //login Button ----------------------------
 
@@ -120,13 +117,20 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
 
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data.setGuest();
+                Toast.makeText(LogInActivity.this, "Welcome", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(LogInActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+
     }
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(LogInActivity.this, SplashActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra("EXIT", true);
-        startActivity(intent);
+        System.exit(1);
     }
 }
