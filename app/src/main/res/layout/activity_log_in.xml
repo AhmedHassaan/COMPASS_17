@@ -9,58 +9,59 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="15dp"
-        android:orientation="vertical"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_marginTop="@dimen/log_in_large_margin"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/compass"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_width="@dimen/log_in_logo_width"
+            android:layout_height="@dimen/log_in_logo_width"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/compass" />
 
 
         <EditText
             android:id="@+id/Email_logIn_EditText"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:background="@drawable/rect"
+            android:layout_width="@dimen/log_in_button_width"
+            android:layout_height="@dimen/log_in_button_height"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/log_in_large_margin"
+            android:background="@drawable/rect"
             android:drawablePadding="@dimen/activity_horizontal_margin"
             android:ems="10"
-            android:gravity="left"
             android:hint="Email"
             android:inputType="textPersonName"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:textSize="@dimen/log_in_text_size" />
 
         <Button
             android:id="@+id/logIn_btn"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/log_in_button_width"
+            android:layout_height="@dimen/log_in_button_height"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="@dimen/log_in_large_margin"
             android:background="@drawable/dark_rect"
             android:text="Proceed"
             android:textAllCaps="false"
             android:textColor="#ffffff"
-            android:textSize="20dp"
+            android:textSize="@dimen/log_in_text_size"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/guest"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/log_in_button_width"
+            android:layout_height="@dimen/log_in_button_height"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/log_in_small_margin"
             android:background="@drawable/dark_rect"
             android:text="Don't Have an Account"
             android:textAllCaps="false"
             android:textColor="#ffffff"
-            android:textSize="20dp"
+            android:textSize="@dimen/log_in_text_size"
             android:textStyle="bold" />
 
 

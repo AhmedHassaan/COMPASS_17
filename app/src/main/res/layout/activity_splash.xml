@@ -17,8 +17,8 @@
         android:id="@+id/maain"/>
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="@dimen/splash_logo_width"
+        android:layout_height="@dimen/splash_logo_width"
         android:id="@+id/img_logo"
         android:src="@drawable/compass"
         android:layout_centerInParent="true"

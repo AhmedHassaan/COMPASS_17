@@ -61,7 +61,7 @@ public class SessionsFragment extends Fragment {
             nougat.setImageResource(R.drawable.nougats);
 //            nougat.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.nougat);
-            selectedText.setText("Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it.");
+            selectedText.setText("Hello Nougat");
         }
         if (data.getWorkshop().equals("photoshop")) {
             selectedWorkshop = "photoshop";
@@ -69,7 +69,7 @@ public class SessionsFragment extends Fragment {
             photoshop.setImageResource(R.drawable.photoshops);
 //            photoshop.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.photoshop);
-            selectedText.setText("Photoshop Workshop");
+            selectedText.setText("Image Station");
         }
         if (data.getWorkshop().equals("trible")) {
             selectedWorkshop = "trible";
@@ -77,7 +77,7 @@ public class SessionsFragment extends Fragment {
             trible.setImageResource(R.drawable.tribles);
 //            trible.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.trible);
-            selectedText.setText("Triple double U Workshop");
+            selectedText.setText("Triple double U");
         }
         if (data.getWorkshop().equals("smily")) {
             selectedWorkshop = "smily";
@@ -85,7 +85,7 @@ public class SessionsFragment extends Fragment {
             smily.setImageResource(R.drawable.smilys);
 //            smily.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.smily);
-            selectedText.setText("Smiley Face Workshop");
+            selectedText.setText("Blink Bloom");
         }
         if (data.getWorkshop().equals("ulalia")) {
             selectedWorkshop = "ulalia";
@@ -93,7 +93,7 @@ public class SessionsFragment extends Fragment {
             ulalia.setImageResource(R.drawable.ulalias);
 //            ulalia.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.ulalia);
-            selectedText.setText("Ulalia Workshop");
+            selectedText.setText("Ulalia");
         }
         if (data.getWorkshop().equals("topaz")) {
             selectedWorkshop = "topaz";
@@ -101,7 +101,7 @@ public class SessionsFragment extends Fragment {
             topaz.setImageResource(R.drawable.topazs);
 //            topaz.setBackgroundResource(R.drawable.ring);
             selectedImage.setImageResource(R.drawable.topaz);
-            selectedText.setText("Topaz Workshop");
+            selectedText.setText("6Topaz");
         }
 
         if(!data.getLogin()){
@@ -146,7 +146,7 @@ public class SessionsFragment extends Fragment {
                 trible.setImageResource(R.drawable.tribles);
 //                trible.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.trible);
-                selectedText.setText("Triple double U Workshop");
+                selectedText.setText("Triple double U");
             }
         });
 
@@ -158,8 +158,7 @@ public class SessionsFragment extends Fragment {
                 nougat.setImageResource(R.drawable.nougats);
 //                nougat.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.nougat);
-                selectedText.setText("Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it.");
-            }
+                selectedText.setText("Hello Nougat");}
         });
         topaz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,7 +168,7 @@ public class SessionsFragment extends Fragment {
                 topaz.setImageResource(R.drawable.topazs);
 //                topaz.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.topaz);
-                selectedText.setText("Topaz Workshop");
+                selectedText.setText("6Topaz");
             }
         });
         ulalia.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +179,7 @@ public class SessionsFragment extends Fragment {
                 ulalia.setImageResource(R.drawable.ulalias);
 //                ulalia.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.ulalia);
-                selectedText.setText("Ulalia Workshop");
+                selectedText.setText("Ulalia");
             }
         });
         photoshop.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +190,7 @@ public class SessionsFragment extends Fragment {
                 photoshop.setImageResource(R.drawable.photoshops);
 //                photoshop.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.photoshop);
-                selectedText.setText("Photoshop Workshop");
+                selectedText.setText("Image Station");
             }
         });
         smily.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +201,7 @@ public class SessionsFragment extends Fragment {
                 smily.setImageResource(R.drawable.smilys);
 //                smily.setBackgroundResource(R.drawable.ring);
                 selectedImage.setImageResource(R.drawable.smily);
-                selectedText.setText("Smiley Face Workshop");
+                selectedText.setText("Blink Bloom");
             }
         });
         return view;

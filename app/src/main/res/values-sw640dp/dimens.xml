@@ -2,8 +2,26 @@
 <resources>
     <!-- Tablet Mode -->
     <dimen name="workshop_logo_width">250dp</dimen>
-    <dimen name="workshop_text_size">48sp</dimen>
+    <dimen name="workshop_text_size">50sp</dimen>
+    <dimen name="workshop_button_text_size">30sp</dimen>
+    <dimen name="workshop_logo_margin">14dp</dimen>
     <dimen name="workshop_margin">48dp</dimen>
     <dimen name="location_icon_width">80dp</dimen>
     <dimen name="location_icon_margin">15dp</dimen>
+    <dimen name="about_us_text_size">48sp</dimen>
+    <dimen name="about_us_compass_logo_height">500dp</dimen>
+    <dimen name="about_us_logo_height">300dp</dimen>
+    <dimen name="about_us_logo_margin">30dp</dimen>
+    <dimen name="about_us_text_padding">15dp</dimen>
+    <dimen name="log_in_logo_width">400dp</dimen>
+    <dimen name="log_in_button_width">600dp</dimen>
+    <dimen name="log_in_button_height">100dp</dimen>
+    <dimen name="log_in_text_size">40sp</dimen>
+    <dimen name="log_in_large_margin">60dp</dimen>
+    <dimen name="log_in_small_margin">15dp</dimen>
+    <dimen name="news_image_height">350dp</dimen>
+    <dimen name="news_title_text_size">50sp</dimen>
+    <dimen name="news_article_text_size">40sp</dimen>
+    <dimen name="splash_logo_width">700dp</dimen>
+    <dimen name="workshop_icon_padding">10dp</dimen>
 </resources>

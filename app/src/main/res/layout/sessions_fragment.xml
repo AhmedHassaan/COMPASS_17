@@ -3,74 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/mandala"
+    android:orientation="vertical"
     android:weightSum="10"
     tools:context="com.example.amr.compass_17.Fragments.SessionsFragment">
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:background="#CFD8DC"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp">
+        android:weightSum="3">
 
-        <TextView
-            android:id="@+id/selectedText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="2dp"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            android:layout_toEndOf="@+id/selectedImage"
-            android:layout_toRightOf="@+id/selectedImage"
-            android:text="Hello Nougat : It’s COMPASS’17’s android workshop, the objective of this workshop is fairly simple, to show you guys how an android application works, how to make a great looking android application from scratch and the knowledge necessary to do so, but of course with a touch of fun, the way that COMPASS has always done it."
-            android:textSize="@dimen/workshop_text_size" />
+            <ImageButton
+                android:id="@+id/selectedImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/workshop_logo_margin"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/trible" />
 
-        <ImageButton
-            android:id="@+id/selectedImage"
-            android:layout_width="@dimen/workshop_logo_width"
-            android:layout_centerVertical="true"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/trible" />
+            <Button
+                android:id="@+id/infoButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:text="Get Info"
+                android:textSize="@dimen/workshop_button_text_size" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/infoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:textSize="15sp"
-            android:layout_marginLeft="@dimen/location_icon_margin"
-            android:layout_marginRight="@dimen/location_icon_margin"
-            android:text="Get Info"
-            android:layout_below="@+id/selectedImage"
-            android:layout_toStartOf="@+id/selectedText" />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/selectedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Triple double U"
+                android:textSize="@dimen/workshop_text_size"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/workshop_margin"
         android:layout_marginRight="@dimen/workshop_margin"
-        android:paddingTop="70dp"
         android:layout_weight="6.5"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="70dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,7 +83,7 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/trible" />
+                android:src="@drawable/tribles" />
 
             <ImageButton
                 android:id="@+id/ulalia"
