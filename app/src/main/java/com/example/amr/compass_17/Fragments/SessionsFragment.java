@@ -11,6 +11,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -47,6 +49,7 @@ public class SessionsFragment extends Fragment {
     Button info;
     String selectedWorkshop;
     Users data;
+    static Animation animation;
 
     @Nullable
     @Override
@@ -54,54 +57,49 @@ public class SessionsFragment extends Fragment {
         View view = inflater.inflate(R.layout.sessions_fragment, container, false);
         ButterKnife.bind(this, view);
         data = new Users(getActivity());
+        animation = AnimationUtils.loadAnimation(getActivity(),R.anim.workshop_selected);
         selectedText.setMovementMethod(new ScrollingMovementMethod());
         if (data.getWorkshop().equals("nougat")) {
             selectedWorkshop = "nougat";
             reset();
-            nougat.setImageResource(R.drawable.nougats);
-//            nougat.setBackgroundResource(R.drawable.ring);
+            selectSession(nougat);
             selectedImage.setImageResource(R.drawable.nougat);
-            selectedText.setText("Hello Nougat");
+            selectedText.setText("This is Android Workshop");
         }
         if (data.getWorkshop().equals("photoshop")) {
             selectedWorkshop = "photoshop";
             reset();
-            photoshop.setImageResource(R.drawable.photoshops);
-//            photoshop.setBackgroundResource(R.drawable.ring);
+            selectSession(photoshop);
             selectedImage.setImageResource(R.drawable.photoshop);
-            selectedText.setText("Image Station");
+            selectedText.setText("This is Photoshop Workshop");
         }
-        if (data.getWorkshop().equals("trible")) {
-            selectedWorkshop = "trible";
+        if (data.getWorkshop().equals("triple")) {
+            selectedWorkshop = "triple";
             reset();
-            trible.setImageResource(R.drawable.tribles);
-//            trible.setBackgroundResource(R.drawable.ring);
+            selectSession(trible);
             selectedImage.setImageResource(R.drawable.trible);
-            selectedText.setText("Triple double U");
+            selectedText.setText("This is web workshop");
         }
         if (data.getWorkshop().equals("smily")) {
             selectedWorkshop = "smily";
             reset();
-            smily.setImageResource(R.drawable.smilys);
-//            smily.setBackgroundResource(R.drawable.ring);
+            selectSession(smily);
             selectedImage.setImageResource(R.drawable.smily);
-            selectedText.setText("Blink Bloom");
+            selectedText.setText("This is PR workshop");
         }
         if (data.getWorkshop().equals("ulalia")) {
             selectedWorkshop = "ulalia";
             reset();
-            ulalia.setImageResource(R.drawable.ulalias);
-//            ulalia.setBackgroundResource(R.drawable.ring);
+            selectSession(ulalia);
             selectedImage.setImageResource(R.drawable.ulalia);
-            selectedText.setText("Ulalia");
+            selectedText.setText("This is Marketing workshop");
         }
         if (data.getWorkshop().equals("topaz")) {
             selectedWorkshop = "topaz";
             reset();
-            topaz.setImageResource(R.drawable.topazs);
-//            topaz.setBackgroundResource(R.drawable.ring);
+            selectSession(topaz);
             selectedImage.setImageResource(R.drawable.topaz);
-            selectedText.setText("6Topaz");
+            selectedText.setText("This is Creativity workshop");
         }
 
         if(!data.getLogin()){
@@ -143,10 +141,9 @@ public class SessionsFragment extends Fragment {
             public void onClick(View view) {
                 selectedWorkshop = "trible";
                 reset();
-                trible.setImageResource(R.drawable.tribles);
-//                trible.setBackgroundResource(R.drawable.ring);
+                selectSession(trible);
                 selectedImage.setImageResource(R.drawable.trible);
-                selectedText.setText("Triple double U");
+                selectedText.setText("This is web workshop");
             }
         });
 
@@ -155,20 +152,18 @@ public class SessionsFragment extends Fragment {
             public void onClick(View view) {
                 selectedWorkshop = "nougat";
                 reset();
-                nougat.setImageResource(R.drawable.nougats);
-//                nougat.setBackgroundResource(R.drawable.ring);
+                selectSession(nougat);
                 selectedImage.setImageResource(R.drawable.nougat);
-                selectedText.setText("Hello Nougat");}
+                selectedText.setText("This is Android workshop");}
         });
         topaz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 selectedWorkshop = "topaz";
                 reset();
-                topaz.setImageResource(R.drawable.topazs);
-//                topaz.setBackgroundResource(R.drawable.ring);
+                selectSession(topaz);
                 selectedImage.setImageResource(R.drawable.topaz);
-                selectedText.setText("6Topaz");
+                selectedText.setText("This is Creativity workshop");
             }
         });
         ulalia.setOnClickListener(new View.OnClickListener() {
@@ -176,10 +171,9 @@ public class SessionsFragment extends Fragment {
             public void onClick(View view) {
                 selectedWorkshop = "ulalia";
                 reset();
-                ulalia.setImageResource(R.drawable.ulalias);
-//                ulalia.setBackgroundResource(R.drawable.ring);
+                selectSession(ulalia);
                 selectedImage.setImageResource(R.drawable.ulalia);
-                selectedText.setText("Ulalia");
+                selectedText.setText("This is Marketing workshop");
             }
         });
         photoshop.setOnClickListener(new View.OnClickListener() {
@@ -187,10 +181,9 @@ public class SessionsFragment extends Fragment {
             public void onClick(View view) {
                 selectedWorkshop = "photoshop";
                 reset();
-                photoshop.setImageResource(R.drawable.photoshops);
-//                photoshop.setBackgroundResource(R.drawable.ring);
+                selectSession(photoshop);
                 selectedImage.setImageResource(R.drawable.photoshop);
-                selectedText.setText("Image Station");
+                selectedText.setText("This is Photoshop workshop");
             }
         });
         smily.setOnClickListener(new View.OnClickListener() {
@@ -198,10 +191,9 @@ public class SessionsFragment extends Fragment {
             public void onClick(View view) {
                 selectedWorkshop = "smily";
                 reset();
-                smily.setImageResource(R.drawable.smilys);
-//                smily.setBackgroundResource(R.drawable.ring);
+                selectSession(smily);
                 selectedImage.setImageResource(R.drawable.smily);
-                selectedText.setText("Blink Bloom");
+                selectedText.setText("This is PR workshop");
             }
         });
         return view;
@@ -209,16 +201,21 @@ public class SessionsFragment extends Fragment {
 
     public void reset(){
         topaz.setImageResource(R.drawable.topaz);
-//        nougat.setBackgroundResource(0);
-//        topaz.setBackgroundResource(0);
-//        photoshop.setBackgroundResource(0);
-//        smily.setBackgroundResource(0);
-//        ulalia.setBackgroundResource(0);
-//        trible.setBackgroundResource(0);
+        nougat.setBackgroundResource(0);
+        topaz.setBackgroundResource(0);
+        photoshop.setBackgroundResource(0);
+        smily.setBackgroundResource(0);
+        ulalia.setBackgroundResource(0);
+        trible.setBackgroundResource(0);
         trible.setImageResource(R.drawable.trible);
         nougat.setImageResource(R.drawable.nougat);
         smily.setImageResource(R.drawable.smily);
         photoshop.setImageResource(R.drawable.photoshop);
         ulalia.setImageResource(R.drawable.ulalia);
+    }
+
+    public void selectSession(View view){
+        view.setBackgroundResource(R.drawable.ring);
+        view.startAnimation(animation);
     }
 }

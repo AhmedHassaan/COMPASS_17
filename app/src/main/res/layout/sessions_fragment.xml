@@ -52,6 +52,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Triple double U"
+                android:textAlignment="center"
+                android:paddingRight="10dp"
                 android:textSize="@dimen/workshop_text_size"
                 android:textStyle="bold" />
         </FrameLayout>
@@ -83,7 +85,7 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/tribles" />
+                android:src="@drawable/trible" />
 
             <ImageButton
                 android:id="@+id/ulalia"
